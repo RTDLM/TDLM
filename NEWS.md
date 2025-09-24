@@ -3,7 +3,8 @@
 This is a list of changes made in the development/GitHub version of the package  
 between TDLM 1.1.2 (CRAN release 2025-05-06) and the next CRAN release.
 
-* 
+* Added new French datasets for teaching purposes (`mass_mtp`, `distance_mtp`, 
+`od_mtp` and `mtp`)
 
 # TDLM 1.1.2
 

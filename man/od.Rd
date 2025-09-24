@@ -3,20 +3,21 @@
 \docType{data}
 \name{od}
 \alias{od}
-\title{Origin-Destination commuting matrix between US Kansas counties in 2000}
+\title{Origin-Destination commuting matrix for Kansas counties, USA (2000)}
 \format{
-A \code{matrix} with 105 rows and 105 columns. Each element of the
-matrix represents the number of commuters between two counties. County IDs
-are used as row names and column names.
+A \code{matrix} with 105 rows and 105 columns. Each element represents the
+number of commuters between two counties. County IDs are used as row and
+column names.
 }
 \source{
-\url{https://www2.census.gov/programs-surveys/decennial/tables/2000/county-to-county-worker-flow-files/}
+<https://www2.census.gov/programs-surveys/decennial/tables/2000/
+county-to-county-worker-flow-files/>
 }
 \usage{
 od
 }
 \description{
-A dataset containing the number of commuters between 105 US Kansas counties
-in 2000.
+A dataset containing the number of commuters between 105 Kansas counties in
+2000.
 }
 \keyword{datasets}

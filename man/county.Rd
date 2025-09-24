@@ -3,12 +3,12 @@
 \docType{data}
 \name{county}
 \alias{county}
-\title{Spatial distribution of US Kansas counties in 2000}
+\title{Spatial distribution of Kansas counties, USA (2000)}
 \format{
 \describe{
 \item{ID}{County ID.}
-\item{Longitude}{Longitude coordinate of the centroid of the county.}
-\item{Latitude}{Latitude coordinate of the centroid of the county.}
+\item{Longitude}{Longitude coordinate of the county centroid.}
+\item{Latitude}{Latitude coordinate of the county centroid.}
 \item{Area}{Surface area of the county (in square kilometers).}
 \item{geometry}{Geometry of the county.}
 }
@@ -20,6 +20,6 @@
 county
 }
 \description{
-A dataset containing the geometry of 105 US Kansas counties.
+A dataset containing the geometry of 105 Kansas counties.
 }
 \keyword{datasets}

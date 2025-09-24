@@ -3,12 +3,11 @@
 \docType{data}
 \name{coords_xy}
 \alias{coords_xy}
-\title{Geographical coordinates of US Kansas counties' centroids in 2000
-(X/Y based on Web Mercator)}
+\title{Geographical coordinates of Kansas counties' centroids (X/Y, Web Mercator, 2000)}
 \format{
 \describe{
-\item{X}{X coordinate of the centroid of the county.}
-\item{Y}{Y coordinate of the centroid of the county.}
+\item{X}{X coordinate of the county centroid.}
+\item{Y}{Y coordinate of the county centroid.}
 }
 }
 \source{
@@ -18,7 +17,7 @@
 coords_xy
 }
 \description{
-A dataset containing the geographical coordinates of US Kansas counties'
-centroids in 2000 (X/Y based on Web Mercator).
+A dataset containing the geographical coordinates of Kansas counties' centroids
+in Web Mercator projection.
 }
 \keyword{datasets}

@@ -3,11 +3,10 @@
 \docType{data}
 \name{distance}
 \alias{distance}
-\title{Great-circle distances between US Kansas counties}
+\title{Great-circle distances between Kansas counties, USA}
 \format{
-A \code{matrix} with 105 rows and 105 columns. Each element of the
-matrix represents the distance between two counties. County IDs are used as
-row names and column names.
+A \code{matrix} with 105 rows and 105 columns. Each element represents the
+distance between two counties. County IDs are used as row and column names.
 }
 \source{
 \url{https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html}
@@ -17,6 +16,6 @@ distance
 }
 \description{
 A dataset containing the great-circle distance (in kilometers) between 105
-US Kansas counties.
+Kansas counties.
 }
 \keyword{datasets}

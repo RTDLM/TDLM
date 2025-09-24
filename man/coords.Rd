@@ -3,12 +3,11 @@
 \docType{data}
 \name{coords}
 \alias{coords}
-\title{Geographical coordinates of US Kansas counties' centroids in 2000
-(Longitude/Latitude)}
+\title{Geographical coordinates of Kansas counties' centroids (Longitude/Latitude, 2000)}
 \format{
 \describe{
-\item{Longitude}{Longitude coordinate of the centroid of the county.}
-\item{Latitude}{Latitude coordinate of the centroid of the county.}
+\item{Longitude}{Longitude coordinate of the county centroid.}
+\item{Latitude}{Latitude coordinate of the county centroid.}
 }
 }
 \source{
@@ -18,7 +17,6 @@
 coords
 }
 \description{
-A dataset containing the geographical coordinates of US Kansas counties'
-centroids in 2000 (Longitude/Latitude).
+A dataset containing the geographical coordinates of Kansas counties' centroids.
 }
 \keyword{datasets}
