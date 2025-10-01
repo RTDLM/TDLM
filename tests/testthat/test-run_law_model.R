@@ -40,6 +40,30 @@ test_that("valid output", {
                        write_proba = TRUE,
                        check_names = TRUE)
   expect_identical(class(res)[1], "TDLM")
+  expect_identical(sum(res$replication_1), sum(Oi))
+  expect_identical(sum(res$replication_1), sum(Dj))
+  expect_identical(round(apply(res$replication_1,1,sum)), Oi)
+  expect_identical(round(apply(res$replication_1,2,sum)), Dj)
+  
+  res <- run_law_model(law = "NGravExp", 
+                       mass_origin = mi, 
+                       mass_destination = mj, 
+                       distance = dist, 
+                       opportunity = sij,
+                       param = 0.01,
+                       model = "DCM", 
+                       nb_trips = NULL, 
+                       out_trips = Oi, 
+                       in_trips = Dj, 
+                       average = FALSE, 
+                       nbrep = 3, 
+                       maxiter = 50000, 
+                       mindiff = 0.00001,
+                       write_proba = TRUE,
+                       check_names = TRUE)
+  expect_identical(class(res)[1], "TDLM")
+  expect_identical(sum(res$replication_1), sum(Oi))
+  expect_identical(sum(res$replication_1), sum(Dj))
 
   res <- run_law_model(law = "Rad",
                        mass_origin = mi, 
@@ -58,6 +82,10 @@ test_that("valid output", {
                       write_proba = TRUE,
                       check_names = TRUE)
   expect_identical(class(res)[1], "TDLM")
+  expect_identical(sum(res$replication_1), sum(Oi))
+  expect_identical(sum(res$replication_1), sum(Dj))
+  expect_identical(round(apply(res$replication_1,1,sum)), Oi)
+  expect_identical(round(apply(res$replication_1,2,sum)), Dj)
 
   res <- run_law_model(law = "Rad", 
                        mass_origin = mi, 
@@ -76,6 +104,7 @@ test_that("valid output", {
                        write_proba = FALSE,
                        check_names = FALSE)
   expect_identical(class(res)[1], "TDLM")
+  expect_identical(sum(res$replication_1), 1000)
   
   res <- run_law_model(law = "Unif", 
                        mass_origin = mi, 
@@ -94,6 +123,7 @@ test_that("valid output", {
                        write_proba = FALSE,
                        check_names = FALSE)
   expect_identical(class(res)[1], "TDLM")
+  expect_identical(sum(res$replication_1), 1000)
   
   res <- run_law_model(law = "Unif", 
                        mass_origin = mi, 
@@ -112,6 +142,30 @@ test_that("valid output", {
                        write_proba = FALSE,
                        check_names = FALSE)
   expect_identical(class(res)[1], "TDLM")
+  expect_identical(round(sum(res$replication_1)), 1000)
+  
+  
+  res <- run_law_model(law = "Unif", 
+                       mass_origin = mi, 
+                       mass_destination = mj, 
+                       distance = NULL, 
+                       opportunity = sij, 
+                       param = NULL,
+                       model = "UM", 
+                       nb_trips = 1000, 
+                       out_trips = NULL, 
+                       in_trips = NULL, 
+                       average = FALSE, 
+                       nbrep = 3, 
+                       maxiter = 50000, 
+                       mindiff = 0.00001,
+                       write_proba = TRUE,
+                       check_names = TRUE)
+  expect_identical(class(res)[1], "TDLM")
+  expect_identical(sum(res$replication_1), 1000)
+  expect_identical(sum(res$replication_2), 1000)
+  expect_identical(sum(res$replication_3), 1000)
+  expect_identical(round(sum(res$proba)), 1)
   
   res <- run_law_model(law = "NGravExp", 
                        mass_origin = mi, 
@@ -379,9 +433,32 @@ test_that("valid output", {
                        nbrep = 3, 
                        maxiter = 50000, 
                        mindiff = 0.00001,
-                       write_proba = FALSE,
+                       write_proba = TRUE,
                        check_names = TRUE)
   expect_identical(class(res)[1], "TDLM") 
+  
+  reslaw <- run_law(law = "RadExt", 
+                    mass_origin = mi, 
+                    mass_destination = mj, 
+                    distance = distance, 
+                    opportunity = sij, 
+                    param = 0.1,
+                    check_names = TRUE)
+  resmod <- run_model(proba = reslaw$proba, 
+                      model = "ACM", 
+                      nb_trips = 1000, 
+                      out_trips = Oi, 
+                      in_trips = Dj, 
+                      average = TRUE, 
+                      nbrep = 3, 
+                      maxiter = 50000, 
+                      mindiff = 0.00001,
+                      check_names = TRUE)
+  expect_identical(as.numeric(sum(round(res$replication_1,digits=7)==
+                                  round(resmod$replication_1,digits=7))), 
+                   11025)
+  expect_identical(as.numeric(sum(res$proba==reslaw$proba)), 11025)
+  
   
 })
 
