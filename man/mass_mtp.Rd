@@ -9,8 +9,8 @@ A \code{data.frame} with 342 rows and 4 columns:
 \describe{
 \item{rownames}{Municipality ID.}
 \item{Population}{Number of inhabitants.}
-\item{Out-commuters}{Number of out-commuters.}
-\item{In-commuters}{Number of in-commuters.}
+\item{Out_Commuters}{Number of out-commuters.}
+\item{In_Commuters}{Number of in-commuters.}
 }
 }
 \source{

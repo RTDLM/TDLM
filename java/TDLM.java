@@ -467,7 +467,7 @@ public class TDLM {
             for (int i = 0; i < n; i++) {
                 if (sum[i] > 0) {
                     for (int j = 0; j < n; j++) {
-                        S[j][i] = (int) Math.floor(Dj[i] * tweights[i][j] / sum[i]);
+                        S[j][i] = Dj[i] * tweights[i][j] / sum[i];
                     }
                 }
             }

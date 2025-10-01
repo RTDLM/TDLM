@@ -7,8 +7,8 @@
 #' \describe{
 #'   \item{rownames}{County ID.}
 #'   \item{Population}{Number of inhabitants.}
-#'   \item{Out-commuters}{Number of out-commuters.}
-#'   \item{In-commuters}{Number of in-commuters.}
+#'   \item{Out_Commuters}{Number of out-commuters.}
+#'   \item{In_Commuters}{Number of in-commuters.}
 #' }
 #' @source <https://www2.census.gov/programs-surveys/decennial/tables/2000/county-to-county-worker-flow-files/>
 "mass"
@@ -84,8 +84,8 @@
 #' \describe{
 #'   \item{rownames}{Municipality ID.}
 #'   \item{Population}{Number of inhabitants.}
-#'   \item{Out-commuters}{Number of out-commuters.}
-#'   \item{In-commuters}{Number of in-commuters.}
+#'   \item{Out_Commuters}{Number of out-commuters.}
+#'   \item{In_Commuters}{Number of in-commuters.}
 #' }
 #' @source <https://www.insee.fr/fr/statistiques/7630376/>
 #' @keywords internal
