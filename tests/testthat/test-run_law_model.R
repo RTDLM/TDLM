@@ -456,7 +456,7 @@ test_that("valid output", {
                       check_names = TRUE)
   expect_identical(as.numeric(sum(round(res$replication_1,digits=7)==
                                   round(resmod$replication_1,digits=7))), 
-                   11025) 
+                   11025)
   expect_identical(as.numeric(sum(res$proba==reslaw$proba)), 11025)
   
   
