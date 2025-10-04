@@ -10,7 +10,7 @@ number of commuters between two municipalities. Municipality IDs are used as
 row and column names.
 }
 \source{
-\url{https://www.insee.fr/fr/statistiques/7630376/}
+\url{https://www.insee.fr/fr/statistiques/7630376}
 }
 \usage{
 od_mtp

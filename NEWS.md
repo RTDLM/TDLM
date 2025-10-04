@@ -1,10 +1,22 @@
-# TDLM 1.1.2.9000
+# TDLM 1.1.3.9000
 
 This is a list of changes made in the development/GitHub version of the package  
-between TDLM 1.1.2 (CRAN release 2025-05-06) and the next CRAN release.
+between TDLM 1.1.3 (CRAN release 2025-09-03) and the next CRAN release.
+
+* 
+
+# TDLM 1.1.3
+
+This is a list of changes made between TDLM 1.1.2 (CRAN release 2025-05-06) and  
+TDLM 1.1.3 (CRAN release 2025-09-03).
+
+* Corrected a minor issue with `ACM` when `average=TRUE` in 
+`run_law_model()` and `run_model()`.
 
 * Added new French datasets for teaching purposes (`mass_mtp`, `distance_mtp`, 
-`od_mtp` and `mtp`)
+`od_mtp` and `mtp`).
+
+* Python version available: [PyTDLM](https://rtdlm.github.io/PyTDLM/).
 
 # TDLM 1.1.2
 

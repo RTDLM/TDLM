@@ -14,7 +14,7 @@ A \code{data.frame} with 342 rows and 4 columns:
 }
 }
 \source{
-\url{https://www.insee.fr/fr/statistiques/7630376/}
+\url{https://www.insee.fr/fr/statistiques/7630376}
 }
 \usage{
 mass_mtp

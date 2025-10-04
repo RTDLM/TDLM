@@ -56,7 +56,7 @@ Origin-Destination (OD) matrix.
 \details{
 Several goodness-of-fit measures are considered, such as the Common Part
 of Commuters (CPC), the Common Part of Links (CPL), and the Common Part of
-Commuters based on the distance (CPC_d), as described in \href{http://arxiv.org/abs/1506.04889}{Lenormand \emph{et al.} (2016)}. It also includes
+Commuters based on the distance (CPC_d), as described in \href{https://arxiv.org/abs/1506.04889}{Lenormand \emph{et al.} (2016)}. It also includes
 classical metrics such as the
 \href{https://rtdlm.github.io/TDLM/articles/TDLM.html#normalized-root-mean-square-error-nrmse}{Normalized Root Mean Square Error}
 (NRMSE), the

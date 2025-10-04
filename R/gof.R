@@ -41,7 +41,7 @@
 #' Several goodness-of-fit measures are considered, such as the Common Part
 #' of Commuters (CPC), the Common Part of Links (CPL), and the Common Part of 
 #' Commuters based on the distance (CPC_d), as described in [Lenormand 
-#' \emph{et al.} (2016)](http://arxiv.org/abs/1506.04889). It also includes 
+#' \emph{et al.} (2016)](https://arxiv.org/abs/1506.04889). It also includes 
 #' classical metrics such as the 
 #' [Normalized Root Mean Square Error](https://rtdlm.github.io/TDLM/articles/TDLM.html#normalized-root-mean-square-error-nrmse) 
 #' (NRMSE), the 

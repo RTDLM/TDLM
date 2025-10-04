@@ -87,7 +87,7 @@
 #'   \item{Out_Commuters}{Number of out-commuters.}
 #'   \item{In_Commuters}{Number of in-commuters.}
 #' }
-#' @source <https://www.insee.fr/fr/statistiques/7630376/>
+#' @source <https://www.insee.fr/fr/statistiques/7630376>
 #' @keywords internal
 "mass_mtp"
 
@@ -111,7 +111,7 @@
 #' @format A `matrix` with 342 rows and 342 columns. Each element represents the
 #' number of commuters between two municipalities. Municipality IDs are used as
 #' row and column names.
-#' @source <https://www.insee.fr/fr/statistiques/7630376/>
+#' @source <https://www.insee.fr/fr/statistiques/7630376>
 #' @keywords internal
 "od_mtp"
 
