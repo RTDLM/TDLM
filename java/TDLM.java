@@ -286,7 +286,8 @@ public class TDLM {
             for (int i = 0; i < W.length; i++) {
                 for (int j = 0; j < W.length; j++) {
                     if (i != j) {
-                        W[i][j] = 1.0 / (((double) W.length) * ((double) W.length) - ((double) W.length));
+                        // W[i][j] = 1.0  / (((double) W.length) * ((double) W.length) - ((double) W.length));
+                        W[i][j] = 1.0;
                     } else {
                         W[i][j] = 0;
                     }
@@ -501,9 +502,9 @@ public class TDLM {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 weights[i][j] = pij[i][j];
-                if (weights[i][j] == 0) {    //Only non-zero values are admited
-                    weights[i][j] = 0.01;
-                }
+                //if (weights[i][j] == 0) {    //Only non-zero values are admited
+                //    weights[i][j] = 0.01;
+                //}
             }
         }
 

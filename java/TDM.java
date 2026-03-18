@@ -286,7 +286,7 @@ public class TDM {
             if (marg[i][0] == 0) {      //Only non-zero values
                 marg[i][0] = 0.01;
             }
-            if (marg[i][1] == 0) {      //Only non-zero values are admited
+            if (marg[i][1] == 0) {      //Only non-zero values are admitted
                 marg[i][1] = 0.01;
             }
         }
@@ -295,9 +295,9 @@ public class TDM {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 weights[i][j] = pij[i][j];
-                if (weights[i][j] == 0) {    //Only non-zero values are admited
-                    weights[i][j] = 0.01;
-                }
+                //if (weights[i][j] == 0) {    //Only non-zero values are admitted
+                //    weights[i][j] = 0.01;
+                //}
             }
         }
 
