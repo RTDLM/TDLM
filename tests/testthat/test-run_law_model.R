@@ -40,8 +40,8 @@ test_that("valid output", {
                        write_proba = TRUE,
                        check_names = TRUE)
   expect_identical(class(res)[1], "TDLM")
-  expect_identical(sum(res$replication_1), sum(Oi))
-  expect_identical(sum(res$replication_1), sum(Dj))
+  expect_identical(round(sum(res$replication_1)), sum(Oi))
+  expect_identical(round(sum(res$replication_1)), sum(Dj))
   expect_identical(round(apply(res$replication_1,1,sum)), Oi)
   expect_identical(round(apply(res$replication_1,2,sum)), Dj)
   
@@ -62,8 +62,8 @@ test_that("valid output", {
                        write_proba = TRUE,
                        check_names = TRUE)
   expect_identical(class(res)[1], "TDLM")
-  expect_identical(sum(res$replication_1), sum(Oi))
-  expect_identical(sum(res$replication_1), sum(Dj))
+  expect_identical(round(sum(res$replication_1)), sum(Oi))
+  expect_identical(round(sum(res$replication_1)), sum(Dj))
 
   res <- run_law_model(law = "Rad",
                        mass_origin = mi, 
@@ -82,8 +82,8 @@ test_that("valid output", {
                       write_proba = TRUE,
                       check_names = TRUE)
   expect_identical(class(res)[1], "TDLM")
-  expect_identical(sum(res$replication_1), sum(Oi))
-  expect_identical(sum(res$replication_1), sum(Dj))
+  expect_identical(round(sum(res$replication_1)), sum(Oi))
+  expect_identical(round(sum(res$replication_1)), sum(Dj))
   expect_identical(round(apply(res$replication_1,1,sum)), Oi)
   expect_identical(round(apply(res$replication_1,2,sum)), Dj)
 

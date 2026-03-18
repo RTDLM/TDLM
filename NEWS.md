@@ -3,7 +3,9 @@
 This is a list of changes made in the development/GitHub version of the package  
 between TDLM 1.1.3 (CRAN release 2025-09-03) and the next CRAN release.
 
-* 
+* Corrected an issue with `DCM` (`run_law_model()` and `run_model()`) and the 
+way it handles zeroes in pij. It was particularly problematic with 
+`law = "Unif"`.
 
 # TDLM 1.1.3
 
