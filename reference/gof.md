@@ -162,5 +162,5 @@ gof(sim = res,
     use_proba = FALSE,
     check_names = FALSE)
 #>      Simulation       CPC
-#> 1 replication_1 0.4545613
+#> 1 replication_1 0.4545514
 ```
