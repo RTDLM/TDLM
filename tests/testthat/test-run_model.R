@@ -25,6 +25,7 @@ test_that("valid output", {
                    nbrep = 3, 
                    maxiter = 50, 
                    mindiff = 0.01,
+                   eps = 0.000001,
                    check_names = TRUE)
   expect_identical(class(res)[1], "TDLM")
   
@@ -37,6 +38,7 @@ test_that("valid output", {
                    nbrep = 3, 
                    maxiter = 50, 
                    mindiff = 0.01,
+                   eps = 0.000001,
                    check_names = TRUE)
   expect_identical(class(res)[1], "TDLM")
   
@@ -49,6 +51,7 @@ test_that("valid output", {
                    nbrep = 3, 
                    maxiter = 50, 
                    mindiff = 0.01,
+                   eps = 0.000001,
                    check_names = TRUE)
   expect_identical(class(res)[1], "TDLM")
   
@@ -61,6 +64,7 @@ test_that("valid output", {
                    nbrep = 3, 
                    maxiter = 50, 
                    mindiff = 0.01,
+                   eps = 0.000001,
                    check_names = TRUE)
   expect_identical(class(res)[1], "TDLM")
   
@@ -73,6 +77,7 @@ test_that("valid output", {
                    nbrep = 3, 
                    maxiter = 50, 
                    mindiff = 0.01,
+                   eps = 0.000001,
                    check_names = TRUE)
   expect_identical(class(res)[1], "TDLM")
   
@@ -85,6 +90,7 @@ test_that("valid output", {
                    nbrep = 3, 
                    maxiter = 50, 
                    mindiff = 0.01,
+                   eps = 0.000001,
                    check_names = TRUE)
   expect_identical(class(res)[1], "TDLM")
   
@@ -97,6 +103,7 @@ test_that("valid output", {
                    nbrep = 3, 
                    maxiter = 50, 
                    mindiff = 0.01,
+                   eps = 0.000001,
                    check_names = TRUE)
   expect_identical(class(res)[1], "TDLM")
   
@@ -109,6 +116,7 @@ test_that("valid output", {
                    nbrep = 3, 
                    maxiter = 50, 
                    mindiff = 0.01,
+                   eps = 0.000001,
                    check_names = TRUE)
   expect_identical(class(res)[1], "TDLM")
 
@@ -128,6 +136,7 @@ test_that("invalid inputs", {
                      nbrep = 3, 
                      maxiter = 50, 
                      mindiff = 0.01,
+                     eps = 0.000001,
                      check_names = TRUE),
     "^Please choose model from the following:")
   

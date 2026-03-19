@@ -52,6 +52,10 @@
 #'
 #' @param mindiff A `numeric` strictly positive value indicating the
 #' stopping criterion for adjusting the Doubly Constrained Model (see Details).
+#' 
+#' @param eps A strictly positive `numeric` value used to replace any zero
+#' values in the marginals of the Doubly Constrained Model, in order to avoid
+#' numerical issues during the IPF procedure (see Details).
 #'
 #' @param write_proba A `boolean` indicating if the estimation of the
 #' probability to move from one location to another obtained with the
@@ -129,7 +133,9 @@
 #' default) and `mindiff` (0.01 by default) can be used to tune the model.
 #' `mindiff` is the minimal tolerated relative error between the
 #' simulated and observed marginals. `maxiter` ensures that the algorithm stops
-#'  even if it has not converged toward the `mindiff` wanted value.
+#'  even if it has not converged toward the `mindiff` wanted value. The argument
+#' `eps` (1e-6 by default) can be used to replace zero values in the marginals
+#' in order to avoid numerical issues during the IPF procedure.
 #'
 #' By default, when `average = FALSE`, `nbrep` matrices are generated from
 #' `proba` with multinomial random draws that will take different forms
@@ -203,10 +209,9 @@
 #'                      nbrep = 2, 
 #'                      maxiter = 50, 
 #'                      mindiff = 0.01,
+#'                      eps = 0.000001,
 #'                      write_proba = FALSE,
 #'                      check_names = FALSE)
-#'
-#' print(res)
 #'
 #' @export
 run_law_model <- function(law = "Unif",
@@ -223,6 +228,7 @@ run_law_model <- function(law = "Unif",
                           nbrep = 3,
                           maxiter = 50,
                           mindiff = 0.01,
+                          eps = 0.000001,
                           write_proba = FALSE,
                           check_names = FALSE) {
   
@@ -352,9 +358,11 @@ run_law_model <- function(law = "Unif",
   if (model == "DCM") {
     controls(args = maxiter, type = "strict_positive_integer")
     controls(args = mindiff, type = "strict_positive_numeric")
+    controls(args = eps, type = "strict_positive_numeric")
   } else {
     maxiter <- "50"
     mindiff <- "0.01"
+    eps <- "0.000001"
   }
 
   if (model == "UM") {
@@ -395,8 +403,6 @@ run_law_model <- function(law = "Unif",
     }
   }
   if (model == "DCM") {
-    controls(args = maxiter, type = "strict_positive_integer")
-    controls(args = mindiff, type = "strict_positive_numeric")
     if (!average) {
       controls(
         args = NULL,
@@ -740,6 +746,7 @@ run_law_model <- function(law = "Unif",
   }
   maxiterDCM <- maxiter
   minratioDCM <- mindiff
+  epsDCM <- eps
 
   nbparam <- length(param)
   if ((law == "Rad") | (law == "Rand") | (nbparam == 1)) { # Param 1
@@ -778,7 +785,7 @@ run_law_model <- function(law = "Unif",
     args <- paste0(
       wdin, " ", wdout, " ", law, " ", beta, " ", pij_only, " ",
       model, " ", nbrep, " ", pij_write, " ", multi, " ",
-      maxiterDCM, " ", minratioDCM
+      maxiterDCM, " ", minratioDCM, " ", epsDCM
     )
 
     cmd <- paste0("java -jar ", wdjar, "TDLM.jar ", args)
@@ -851,7 +858,7 @@ run_law_model <- function(law = "Unif",
       args <- paste0(
         wdin, " ", wdout, " ", law, " ", beta, " ", pij_only, " ",
         model, " ", nbrep, " ", pij_write, " ", multi, " ",
-        maxiterDCM, " ", minratioDCM
+        maxiterDCM, " ", minratioDCM, " ", epsDCM
       )
 
       cmd <- paste0("java -jar ", wdjar, "TDLM.jar ", args)

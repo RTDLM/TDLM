@@ -144,13 +144,15 @@ test_that("valid output", {
              check_names = TRUE)
   expect_identical(dim(val)[1] == 1, TRUE)
   
-  val <- gof(sim = res4, 
-             obs = odobs, 
-             measures = c("all", "CPC"), 
-             distance = dist, 
-             bin_size = 2,
-             use_proba = FALSE,
-             check_names = TRUE)
+  quietly(
+    val <- gof(sim = res4, 
+               obs = odobs, 
+               measures = c("all", "CPC"), 
+               distance = dist, 
+               bin_size = 2,
+               use_proba = FALSE,
+               check_names = TRUE)
+  )
   expect_identical(dim(val)[1] == 2, TRUE)
   
 })

@@ -325,6 +325,7 @@ run_law <- function(law = "Unif",
   ismulti <- "true"
   maxiterDCM <- "50"
   minratioDCM <- "0.01"
+  epsDCM <- "0.000001"
 
   nbparam <- length(param)
   if ((law == "Rad") | (law == "Rand") | (nbparam == 1)) { # Param 1
@@ -350,7 +351,7 @@ run_law <- function(law = "Unif",
     args <- paste0(
       wdin, " ", wdout, " ", law, " ", beta, " ", pij_only, " ",
       model, " ", nbrep, " ", pij_write, " ", ismulti, " ",
-      maxiterDCM, " ", minratioDCM
+      maxiterDCM, " ", minratioDCM, " ", epsDCM
     )
 
     cmd <- paste0("java -jar ", wdjar, "TDLM.jar ", args)
@@ -395,7 +396,7 @@ run_law <- function(law = "Unif",
       args <- paste0(
         wdin, " ", wdout, " ", law, " ", beta, " ", pij_only, " ",
         model, " ", nbrep, " ", pij_write, " ", ismulti, " ",
-        maxiterDCM, " ", minratioDCM
+        maxiterDCM, " ", minratioDCM, " ", epsDCM
       )
 
       cmd <- paste0("java -jar ", wdjar, "TDLM.jar ", args)

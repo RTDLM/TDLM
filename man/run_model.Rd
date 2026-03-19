@@ -14,6 +14,7 @@ run_model(
   nbrep = 3,
   maxiter = 50,
   mindiff = 0.01,
+  eps = 1e-06,
   check_names = FALSE
 )
 }
@@ -48,6 +49,10 @@ adjusting the Doubly Constrained Model (see Details).}
 
 \item{mindiff}{A \code{numeric} strictly positive value indicating the
 stopping criterion for adjusting the Doubly Constrained Model (see Details).}
+
+\item{eps}{A strictly positive \code{numeric} value used to replace any zero
+values in the marginals of the Doubly Constrained Model, in order to avoid
+numerical issues during the IPF procedure (see Details).}
 
 \item{check_names}{A \code{boolean} indicating whether the location IDs used as
 matrix rownames and colnames should be checked for consistency
@@ -88,7 +93,9 @@ process (Deming & Stephan, 1940). The arguments \code{maxiter} (50 by
 default) and \code{mindiff} (0.01 by default) can be used to tune the model.
 \code{mindiff} is the minimal tolerated relative error between the
 simulated and observed marginals. \code{maxiter} ensures that the algorithm stops
-even if it has not converged toward the \code{mindiff} wanted value.
+even if it has not converged toward the \code{mindiff} wanted value. The argument
+\code{eps} (1e-6 by default) can be used to replace zero values in the marginals
+in order to avoid numerical issues during the IPF procedure.
 }
 
 By default, when \code{average = FALSE}, \code{nbrep} matrices are generated from
@@ -118,14 +125,17 @@ proba <- od / sum(od)
 Oi <- as.numeric(mass[, 2])
 Dj <- as.numeric(mass[, 3])
 
-res <- run_model(
-  proba = proba,
-  model = "DCM", nb_trips = NULL, out_trips = Oi, in_trips = Dj,
-  average = FALSE, nbrep = 3, maxiter = 50, mindiff = 0.01,
-  check_names = FALSE
-)
-
-# print(res)
+res <- run_model(proba = proba,
+                 model = "DCM", 
+                 nb_trips = NULL, 
+                 out_trips = Oi, 
+                 in_trips = Dj,
+                 average = FALSE, 
+                 nbrep = 3, 
+                 maxiter = 50, 
+                 mindiff = 0.01,
+                 eps = 0.000001,
+                 check_names = FALSE)
 
 }
 \references{

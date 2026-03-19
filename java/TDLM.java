@@ -20,7 +20,7 @@ public class TDLM {
 
     public static void main(String[] args) throws FileNotFoundException {
     	
-    	//Parameters: wdin, wdout, law, beta, pijonly, model, repli, writepij, multi
+    	//Parameters: wdin, wdout, law, beta, pijonly, model, repli, writepij, multi, DCM...
     	String wdin = args[0];
     	String wdout = args[1];
     	String law = args[2];
@@ -32,6 +32,7 @@ public class TDLM {
     	boolean multi = Boolean.parseBoolean(args[8]); 
     	int maxiterDCM = Integer.parseInt(args[9]);
     	double minratioDCM = Double.parseDouble(args[10]);
+    	double epsDCM = Double.parseDouble(args[11]);
    	
         //Load data: Inputs (mi, mj, Oi and Dj), dij and sij       
         //Number of regions n
@@ -146,7 +147,7 @@ public class TDLM {
                     S = ACM(pij, Dj, multi);
                 }
                 if (model.equals("DCM")) {  //Doubly constrained model
-                    S = DCM(pij, Oi, Dj, maxiterDCM, minratioDCM, multi);
+                    S = DCM(pij, Oi, Dj, maxiterDCM, minratioDCM, epsDCM, multi);
                 }
 
                 //Write the resulting simulated OD matrix in a file 
@@ -478,8 +479,8 @@ public class TDLM {
     }
 
     //DCM: generate the network using the Doubly Constrained Model
-    //inputs: pij, Oi, Dj, maxIter (maximal number of iterations for the IPF procedure), closure (stopping criterion)
-    static double[][] DCM(double[][] pij, double[] Oi, double[] Dj, int maxIter, double closure, boolean multi) {
+    //inputs: pij, Oi, Dj, maxIter (maximal number of iterations for the IPF procedure), closure (stopping criterion), eps (to replace marginal nul values)
+    static double[][] DCM(double[][] pij, double[] Oi, double[] Dj, int maxIter, double closure, double eps, boolean multi) {
 
         int n = Oi.length; //Number of Units
 
@@ -491,10 +492,10 @@ public class TDLM {
             marg[i][0] = Oi[i];         //Observed marginal row       
             marg[i][1] = Dj[i];         //Observed marginal column 
             if (marg[i][0] == 0) {      //Only non-zero values
-                marg[i][0] = 0.01;
+                marg[i][0] = eps;
             }
             if (marg[i][1] == 0) {      //Only non-zero values are admited
-                marg[i][1] = 0.01;
+                marg[i][1] = eps;
             }
         }
 
@@ -567,7 +568,7 @@ public class TDLM {
         //NbCommuters are sampled from weights (or not)
         double[][] S = new double[n][n];
         if(multi) {
-        	S = UM(weights, Oi, multi);
+        	S = PCM(weights, Oi, multi);
         }else {
         	S = weights;
         }

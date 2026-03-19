@@ -28,6 +28,7 @@ public class TDM {
     	boolean multi = Boolean.parseBoolean(args[4]);
     	int maxiterDCM = Integer.parseInt(args[5]);
     	double minratioDCM = Double.parseDouble(args[6]);
+    	double epsDCM = Double.parseDouble(args[7]);
     	
         //Load data: pij, Oi and Dj      
         //Number of regions n
@@ -85,7 +86,7 @@ public class TDM {
                 S = ACM(pij, Dj, multi);
             }
             if (model.equals("DCM")) {  //Doubly constrained model
-                S = DCM(pij, Oi, Dj, maxiterDCM, minratioDCM, multi);
+                S = DCM(pij, Oi, Dj, maxiterDCM, minratioDCM, epsDCM, multi);
             }
 
             //Write the resulting simulated OD matrix in a file 
@@ -271,8 +272,8 @@ public class TDM {
     }
 
     //DCM: generate the network using the Doubly Constrained Model
-    //inputs: pij, Oi, Dj, maxIter (maximal number of iterations for the IPF procedure), closure (stopping criterion)
-    static double[][] DCM(double[][] pij, double[] Oi, double[] Dj, int maxIter, double closure, boolean multi) {
+    //inputs: pij, Oi, Dj, maxIter (maximal number of iterations for the IPF procedure), closure (stopping criterion), eps (to replace marginal nul values)
+    static double[][] DCM(double[][] pij, double[] Oi, double[] Dj, int maxIter, double closure, double eps, boolean multi) {
 
         int n = Oi.length; //Number of Units
 
@@ -284,10 +285,10 @@ public class TDM {
             marg[i][0] = Oi[i];         //Observed marginal row       
             marg[i][1] = Dj[i];         //Observed marginal column 
             if (marg[i][0] == 0) {      //Only non-zero values
-                marg[i][0] = 0.01;
+                marg[i][0] = eps;
             }
             if (marg[i][1] == 0) {      //Only non-zero values are admitted
-                marg[i][1] = 0.01;
+                marg[i][1] = eps;
             }
         }
 
@@ -360,7 +361,7 @@ public class TDM {
         //NbCommuters are sampled from weights (or not)
         double[][] S = new double[n][n];
         if(multi) {
-        	S = UM(weights, Oi, multi);
+        	S = PCM(weights, Oi, multi);
         }else {
         	S = weights;
         }

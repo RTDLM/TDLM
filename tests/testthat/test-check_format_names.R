@@ -33,36 +33,41 @@ matrices2 <- list(Dij = dist2, OD = odobs)
 # Tests for valid outputs ------------------------------------------------------
 test_that("valid output", {
   
+
   expect_message(
     check_format_names(vectors = vectors, 
                        matrices = matrices, 
                        check = "format_and_names"),
     "The inputs passed the format_and_names checks successfully!"
   )
-
+  
   expect_message(
     check_format_names(vectors = vectors, 
                        matrices = matrices, check = "format"),
     "The inputs passed the format checks successfully!"
   )
   
-  expect_message(
-    check_format_names(vectors = vectors1, 
-                       matrices = NULL, 
-                       check = "format"),
-    paste0(
-      "No names identified in the vectors list.\n",
-      "Names have been automatically assigned."
+  quietly(
+    expect_message(
+      check_format_names(vectors = vectors1, 
+                         matrices = NULL, 
+                         check = "format"),
+      paste0(
+        "No names identified in the vectors list.\n",
+        "Names have been automatically assigned."
+      )
     )
   )
-  
-  expect_message(
-    check_format_names(vectors = NULL, 
-                       matrices = matrices1, 
-                       check = "format"),
-    paste0(
-      "No names identified in the matrices list.\n",
-      "Names have been automatically assigned."
+
+  quietly(
+    expect_message(
+      check_format_names(vectors = NULL, 
+                         matrices = matrices1, 
+                         check = "format"),
+      paste0(
+        "No names identified in the matrices list.\n",
+        "Names have been automatically assigned."
+      )
     )
   )
   
@@ -96,8 +101,7 @@ test_that("invalid inputs", {
     check_format_names(vectors = vectors, 
                        matrices = NULL, 
                        check = "test"),
-    "Please choose check from the following:
-format or format_and_names."
+    "^Please choose check from the following:"
   )
 
 }) 

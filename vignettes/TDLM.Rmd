@@ -69,7 +69,7 @@ zero diagonal (Figure 1).
 
 <br>
 <center>
-  <img align="bottom" width="60%" height="60%" src="../man/figures/OD.png"
+  <img align="bottom" width="60%" height="60%" src="../man/figures/Fig1.png"
   alt="OD matrix">
 </center> 
 <br>
@@ -78,10 +78,24 @@ zero diagonal (Figure 1).
 </center> 
 <br>
 
+The goal is to generate a simulated OD matrix, $\tilde{T}=(\tilde{T}_{ij})$, 
+using only aggregated data while satisfying a set of constraints (Figure 2).
+
+<br>
+<center>
+  <img align="bottom" width="60%" height="60%" src="../man/figures/Fig2.png"
+  alt="OD matrix">
+</center> 
+<br>
+<center>
+  <b>Figure 2: Illustration of a simulated Origin-Destination (OD) matrix.</b>
+</center> 
+<br>
+
 # Aggregated inputs information
 
 Three categories of inputs are typically considered to simulate an OD matrix
-(Figure 2). The masses and distances are the primary ingredients used to
+(Figure 3). The masses and distances are the primary ingredients used to
 generate a matrix of probabilities based on a given distribution law. Thus, the
 probability $p_{ij}$ of observing a trip from location $i$ to location $j$
 depends on the masses, the demand at the origin ($m_i$), and the offer at
@@ -99,12 +113,12 @@ in the "Constrained distribution models" section).
 
 <br>
 <center>
-  <img align="bottom" width="75%" height="75%" src="../man/figures/Inputs.png"
+  <img align="bottom" width="75%" height="75%" src="../man/figures/Fig3.png"
   alt="Inputs information">
 </center> 
 <br>
 <center>
-  <b>Figure 2: Schematic representation of the aggregated inputs information.
+  <b>Figure 3: Schematic representation of the aggregated inputs information.
   </b>
 </center> 
 <br>
@@ -117,16 +131,16 @@ location $i$ and location $j$. This probability is asymmetric in $i$ and $j$,
 as are the flows themselves. It takes the form of a square matrix of probabilities.
 This probability is normalized across all possible pairs of origins and
 destinations, such that $\sum_{i,j=1}^n p_{ij} = 1$. Therefore, a matrix of
-probabilities can be obtained by normalizing any OD matrix (Figure 3).
+probabilities can be obtained by normalizing any OD matrix (Figure 4).
 
 <br>
 <center>
-  <img align="bottom" width="60%" height="60%" src="../man/figures/Proba.png"
+  <img align="bottom" width="60%" height="60%" src="../man/figures/Fig4.png"
   alt="Probability matrix">
 </center> 
 <br>
 <center>
-  <b>Figure 3: Schematic representation of the matrix of probabilities.
+  <b>Figure 4: Schematic representation of the matrix of probabilities.
   </b>
 </center> 
 <br>
@@ -141,16 +155,16 @@ function of the distance $d_{ij}$ between locations. In contrast to the gravity
 law, the laws of intervening opportunities hinge on the assumption that the
 number of opportunities $s_{ij}$ between locations plays a more important role
 than the distance [@Lenormand2016]. This fundamental difference between the two
-schools of thought is illustrated in Figure 4.
+schools of thought is illustrated in Figure 5.
 
 <br>
 <center>
   <img align="bottom" width="50%" height="50%" 
-  src="../man/figures/GravVsOpp.png" alt="Gravity vs IO">
+  src="../man/figures/Fig5.png" alt="Gravity vs IO">
 </center> 
 <br>
 <center>
-  <b>Figure 4: Illustration of the fundamental difference between gravity and 
+  <b>Figure 5: Illustration of the fundamental difference between gravity and 
   intervening opportunity laws.
   </b>
 </center> 
@@ -168,18 +182,18 @@ $\tilde{T}=(\tilde{T}_{ij})$ by
 drawing at random $N$ trips from the trip distribution law 
 $(p_{ij})_{1 \leq i,j \leq n}$ respecting different level of constraints 
 according to the model. We considered four different types of models in this
-package. As can be observed in Figure 5, the four models respect different level
+package. As can be observed in Figure 6, the four models respect different level
 of constraints from the total number of trips to the total number of out-going 
 and in-coming trips by locations (i.e. the margins).
 
 <br>
 <center>
-  <img align="bottom" width="80%" height="80%" src="../man/figures/Models.png"
+  <img align="bottom" width="80%" height="80%" src="../man/figures/Fig6.png"
   alt="Constrained models">
 </center> 
 <br>
 <center>
-  <b>Figure 5: Schematic representation of the constrained distribution models.
+  <b>Figure 6: Schematic representation of the constrained distribution models.
   </b>
 </center> 
 <br>

@@ -37,6 +37,7 @@ test_that("valid output", {
                        nbrep = 3, 
                        maxiter = 50000, 
                        mindiff = 0.00001,
+                       eps = 0.000001,
                        write_proba = TRUE,
                        check_names = TRUE)
   expect_identical(class(res)[1], "TDLM")
@@ -59,6 +60,7 @@ test_that("valid output", {
                        nbrep = 3, 
                        maxiter = 50000, 
                        mindiff = 0.00001,
+                       eps = 0.000001,
                        write_proba = TRUE,
                        check_names = TRUE)
   expect_identical(class(res)[1], "TDLM")
@@ -79,6 +81,7 @@ test_that("valid output", {
                        nbrep = 3, 
                        maxiter = 50000, 
                        mindiff = 0.00001,
+                       eps = 0.000001,
                       write_proba = TRUE,
                       check_names = TRUE)
   expect_identical(class(res)[1], "TDLM")
@@ -101,6 +104,7 @@ test_that("valid output", {
                        nbrep = 3, 
                        maxiter = 50000, 
                        mindiff = 0.00001,
+                       eps = 0.000001,
                        write_proba = FALSE,
                        check_names = FALSE)
   expect_identical(class(res)[1], "TDLM")
@@ -120,6 +124,7 @@ test_that("valid output", {
                        nbrep = 3, 
                        maxiter = 50000, 
                        mindiff = 0.00001,
+                       eps = 0.000001,
                        write_proba = FALSE,
                        check_names = FALSE)
   expect_identical(class(res)[1], "TDLM")
@@ -139,6 +144,7 @@ test_that("valid output", {
                        nbrep = 3, 
                        maxiter = 50000, 
                        mindiff = 0.00001,
+                       eps = 0.000001,
                        write_proba = FALSE,
                        check_names = FALSE)
   expect_identical(class(res)[1], "TDLM")
@@ -159,6 +165,7 @@ test_that("valid output", {
                        nbrep = 3, 
                        maxiter = 50000, 
                        mindiff = 0.00001,
+                       eps = 0.000001,
                        write_proba = TRUE,
                        check_names = TRUE)
   expect_identical(class(res)[1], "TDLM")
@@ -181,6 +188,7 @@ test_that("valid output", {
                        nbrep = 3, 
                        maxiter = 50000, 
                        mindiff = 0.00001,
+                       eps = 0.000001,
                        write_proba = FALSE,
                        check_names = FALSE)
   expect_identical(class(res)[1], "TDLM")  
@@ -199,6 +207,7 @@ test_that("valid output", {
                        nbrep = 3, 
                        maxiter = 50000, 
                        mindiff = 0.00001,
+                       eps = 0.000001,
                        write_proba = FALSE,
                        check_names = FALSE)
   expect_identical(class(res)[1], "TDLM")
@@ -217,6 +226,7 @@ test_that("valid output", {
                        nbrep = 3, 
                        maxiter = 50000, 
                        mindiff = 0.00001,
+                       eps = 0.000001,
                        write_proba = FALSE,
                        check_names = FALSE)
   expect_identical(class(res)[1], "TDLM")
@@ -235,6 +245,7 @@ test_that("valid output", {
                        nbrep = 3, 
                        maxiter = 50000, 
                        mindiff = 0.00001,
+                       eps = 0.000001,
                        write_proba = FALSE,
                        check_names = FALSE)
   expect_identical(class(res)[1], "TDLM")
@@ -253,6 +264,7 @@ test_that("valid output", {
                        nbrep = 3, 
                        maxiter = 50000, 
                        mindiff = 0.00001,
+                       eps = 0.000001,
                        write_proba = FALSE,
                        check_names = FALSE)
   expect_identical(class(res)[1], "TDLM")
@@ -271,6 +283,7 @@ test_that("valid output", {
                        nbrep = 3, 
                        maxiter = 50000, 
                        mindiff = 0.00001,
+                       eps = 0.000001,
                        write_proba = FALSE,
                        check_names = TRUE)
   expect_identical(class(res)[1], "TDLM")
@@ -289,6 +302,7 @@ test_that("valid output", {
                        nbrep = 3, 
                        maxiter = 50000, 
                        mindiff = 0.00001,
+                       eps = 0.000001,
                        write_proba = FALSE,
                        check_names = TRUE)
   expect_identical(class(res)[1], "TDLM")
@@ -307,6 +321,7 @@ test_that("valid output", {
                        nbrep = 3, 
                        maxiter = 50000, 
                        mindiff = 0.00001,
+                       eps = 0.000001,
                        write_proba = FALSE,
                        check_names = TRUE)
   expect_identical(class(res)[1], "TDLM")
@@ -325,6 +340,7 @@ test_that("valid output", {
                        nbrep = 3, 
                        maxiter = 50000, 
                        mindiff = 0.00001,
+                       eps = 0.000001,
                        write_proba = FALSE,
                        check_names = TRUE)
   expect_identical(class(res)[1], "TDLM")
@@ -343,6 +359,7 @@ test_that("valid output", {
                        nbrep = 3, 
                        maxiter = 50000, 
                        mindiff = 0.00001,
+                       eps = 0.000001,
                        write_proba = FALSE,
                        check_names = TRUE)
   expect_identical(class(res)[1], "TDLM")  
@@ -361,6 +378,7 @@ test_that("valid output", {
                        nbrep = 3, 
                        maxiter = 50000, 
                        mindiff = 0.00001,
+                       eps = 0.000001,
                        write_proba = FALSE,
                        check_names = TRUE)
   expect_identical(class(res)[1], "TDLM") 
@@ -379,6 +397,7 @@ test_that("valid output", {
                        nbrep = 3, 
                        maxiter = 50000, 
                        mindiff = 0.00001,
+                       eps = 0.000001,
                        write_proba = FALSE,
                        check_names = TRUE)
   expect_identical(class(res)[1], "TDLM") 
@@ -397,6 +416,7 @@ test_that("valid output", {
                        nbrep = 3, 
                        maxiter = 50000, 
                        mindiff = 0.00001,
+                       eps = 0.000001,
                        write_proba = FALSE,
                        check_names = TRUE)
   expect_identical(class(res)[1], "TDLM")  
@@ -415,6 +435,7 @@ test_that("valid output", {
                        nbrep = 3, 
                        maxiter = 50000, 
                        mindiff = 0.00001,
+                       eps = 0.000001,
                        write_proba = FALSE,
                        check_names = TRUE)
   expect_identical(class(res)[1], "TDLM") 
@@ -433,6 +454,7 @@ test_that("valid output", {
                        nbrep = 3, 
                        maxiter = 50000, 
                        mindiff = 0.00001,
+                       eps = 0.000001,
                        write_proba = TRUE,
                        check_names = TRUE)
   expect_identical(class(res)[1], "TDLM") 
@@ -453,6 +475,7 @@ test_that("valid output", {
                       nbrep = 3, 
                       maxiter = 50000, 
                       mindiff = 0.00001,
+                      eps = 0.000001,
                       check_names = TRUE)
   expect_identical(as.numeric(sum(round(res$replication_1,digits=7)==
                                   round(resmod$replication_1,digits=7))), 
@@ -480,6 +503,7 @@ test_that("invalid inputs", {
                   nbrep = 3, 
                   maxiter = 50000, 
                   mindiff = 0.00001,
+                  eps = 0.000001,
                   write_proba = FALSE,
                   check_names = FALSE),
     "^Please choose law from the following:")
@@ -499,6 +523,7 @@ test_that("invalid inputs", {
                   nbrep = 3, 
                   maxiter = 50000, 
                   mindiff = 0.00001,
+                  eps = 0.000001,
                   write_proba = FALSE,
                   check_names = FALSE),
     "^Please choose model from the following:")
@@ -518,6 +543,7 @@ test_that("invalid inputs", {
                   nbrep = 3, 
                   maxiter = 50000, 
                   mindiff = 0.00001,
+                  eps = 0.000001,
                   write_proba = FALSE,
                   check_names = FALSE),
     "Total number of out-going and in-coming trips must be equal.")
