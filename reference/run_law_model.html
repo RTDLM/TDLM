@@ -77,6 +77,7 @@ modeling approach used to generate the flows based on this law.</p>
 <span>  nbrep <span class="op">=</span> <span class="fl">3</span>,</span>
 <span>  maxiter <span class="op">=</span> <span class="fl">50</span>,</span>
 <span>  mindiff <span class="op">=</span> <span class="fl">0.01</span>,</span>
+<span>  eps <span class="op">=</span> <span class="fl">1e-06</span>,</span>
 <span>  write_proba <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  check_names <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
@@ -161,6 +162,12 @@ adjusting the Doubly Constrained Model (see Details).</p></dd>
 stopping criterion for adjusting the Doubly Constrained Model (see Details).</p></dd>
 
 
+<dt id="arg-eps">eps<a class="anchor" aria-label="anchor" href="#arg-eps"></a></dt>
+<dd><p>A strictly positive <code>numeric</code> value used to replace any zero
+values in the marginals of the Doubly Constrained Model, in order to avoid
+numerical issues during the IPF procedure (see Details).</p></dd>
+
+
 <dt id="arg-write-proba">write_proba<a class="anchor" aria-label="anchor" href="#arg-write-proba"></a></dt>
 <dd><p>A <code>boolean</code> indicating if the estimation of the
 probability to move from one location to another obtained with the
@@ -237,7 +244,9 @@ process (Deming &amp; Stephan, 1940). The arguments <code>maxiter</code> (50 by
 default) and <code>mindiff</code> (0.01 by default) can be used to tune the model.
 <code>mindiff</code> is the minimal tolerated relative error between the
 simulated and observed marginals. <code>maxiter</code> ensures that the algorithm stops
-even if it has not converged toward the <code>mindiff</code> wanted value.</p></li>
+even if it has not converged toward the <code>mindiff</code> wanted value. The argument
+<code>eps</code> (1e-6 by default) can be used to replace zero values in the marginals
+in order to avoid numerical issues during the IPF procedure.</p></li>
 </ol><p>By default, when <code>average = FALSE</code>, <code>nbrep</code> matrices are generated from
 <code>proba</code> with multinomial random draws that will take different forms
 according to the model used. In this case, the models will deal with positive
@@ -310,16 +319,9 @@ see the vignette:
 <span class="r-in"><span>                     nbrep <span class="op">=</span> <span class="fl">2</span>, </span></span>
 <span class="r-in"><span>                     maxiter <span class="op">=</span> <span class="fl">50</span>, </span></span>
 <span class="r-in"><span>                     mindiff <span class="op">=</span> <span class="fl">0.01</span>,</span></span>
+<span class="r-in"><span>                     eps <span class="op">=</span> <span class="fl">0.000001</span>,</span></span>
 <span class="r-in"><span>                     write_proba <span class="op">=</span> <span class="cn">FALSE</span>,</span></span>
 <span class="r-in"><span>                     check_names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        Argument       Value</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1           Law     GravExp</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2         Model          UM</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 #Replications 1 (average)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4   #Parameters           1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5     Parameter        0.01</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

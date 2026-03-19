@@ -21,6 +21,7 @@ run_model(
   nbrep = 3,
   maxiter = 50,
   mindiff = 0.01,
+  eps = 1e-06,
   check_names = FALSE
 )
 ```
@@ -75,6 +76,12 @@ run_model(
   A `numeric` strictly positive value indicating the stopping criterion
   for adjusting the Doubly Constrained Model (see Details).
 
+- eps:
+
+  A strictly positive `numeric` value used to replace any zero values in
+  the marginals of the Doubly Constrained Model, in order to avoid
+  numerical issues during the IPF procedure (see Details).
+
 - check_names:
 
   A `boolean` indicating whether the location IDs used as matrix
@@ -114,7 +121,9 @@ out-going trips should be equal to the sum of in-coming trips.
     the model. `mindiff` is the minimal tolerated relative error between
     the simulated and observed marginals. `maxiter` ensures that the
     algorithm stops even if it has not converged toward the `mindiff`
-    wanted value.
+    wanted value. The argument `eps` (1e-6 by default) can be used to
+    replace zero values in the marginals in order to avoid numerical
+    issues during the IPF procedure.
 
 By default, when `average = FALSE`, `nbrep` matrices are generated from
 `proba` with multinomial random draws that will take different forms
@@ -172,12 +181,15 @@ proba <- od / sum(od)
 Oi <- as.numeric(mass[, 2])
 Dj <- as.numeric(mass[, 3])
 
-res <- run_model(
-  proba = proba,
-  model = "DCM", nb_trips = NULL, out_trips = Oi, in_trips = Dj,
-  average = FALSE, nbrep = 3, maxiter = 50, mindiff = 0.01,
-  check_names = FALSE
-)
-
-# print(res)
+res <- run_model(proba = proba,
+                 model = "DCM", 
+                 nb_trips = NULL, 
+                 out_trips = Oi, 
+                 in_trips = Dj,
+                 average = FALSE, 
+                 nbrep = 3, 
+                 maxiter = 50, 
+                 mindiff = 0.01,
+                 eps = 0.000001,
+                 check_names = FALSE)
 ```

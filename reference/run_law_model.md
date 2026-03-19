@@ -24,6 +24,7 @@ run_law_model(
   nbrep = 3,
   maxiter = 50,
   mindiff = 0.01,
+  eps = 1e-06,
   write_proba = FALSE,
   check_names = FALSE
 )
@@ -103,6 +104,12 @@ run_law_model(
 
   A `numeric` strictly positive value indicating the stopping criterion
   for adjusting the Doubly Constrained Model (see Details).
+
+- eps:
+
+  A strictly positive `numeric` value used to replace any zero values in
+  the marginals of the Doubly Constrained Model, in order to avoid
+  numerical issues during the IPF procedure (see Details).
 
 - write_proba:
 
@@ -199,7 +206,9 @@ sum of out-going trips should be equal to the sum of in-coming trips.
     the model. `mindiff` is the minimal tolerated relative error between
     the simulated and observed marginals. `maxiter` ensures that the
     algorithm stops even if it has not converged toward the `mindiff`
-    wanted value.
+    wanted value. The argument `eps` (1e-6 by default) can be used to
+    replace zero values in the marginals in order to avoid numerical
+    issues during the IPF procedure.
 
 By default, when `average = FALSE`, `nbrep` matrices are generated from
 `proba` with multinomial random draws that will take different forms
@@ -282,14 +291,7 @@ res <- run_law_model(law = "GravExp",
                      nbrep = 2, 
                      maxiter = 50, 
                      mindiff = 0.01,
+                     eps = 0.000001,
                      write_proba = FALSE,
                      check_names = FALSE)
-
-print(res)
-#>        Argument       Value
-#> 1           Law     GravExp
-#> 2         Model          UM
-#> 3 #Replications 1 (average)
-#> 4   #Parameters           1
-#> 5     Parameter        0.01
 ```

@@ -35,7 +35,7 @@ values, and may have a zero diagonal (Figure 1).
 
   
 
-![OD matrix](../reference/figures/OD.png)
+![OD matrix](../reference/figures/Fig1.png)
 
   
 
@@ -43,10 +43,25 @@ values, and may have a zero diagonal (Figure 1).
 
   
 
+The goal is to generate a simulated OD matrix,
+$\widetilde{T} = \left( {\widetilde{T}}_{ij} \right)$, using only
+aggregated data while satisfying a set of constraints (Figure 2).
+
+  
+
+![OD matrix](../reference/figures/Fig2.png)
+
+  
+
+**Figure 2: Illustration of a simulated Origin-Destination (OD)
+matrix.**
+
+  
+
 ## Aggregated inputs information
 
 Three categories of inputs are typically considered to simulate an OD
-matrix (Figure 2). The masses and distances are the primary ingredients
+matrix (Figure 3). The masses and distances are the primary ingredients
 used to generate a matrix of probabilities based on a given distribution
 law. Thus, the probability $p_{ij}$ of observing a trip from location
 $i$ to location $j$ depends on the masses, the demand at the origin
@@ -66,11 +81,11 @@ models” section).
 
   
 
-![Inputs information](../reference/figures/Inputs.png)
+![Inputs information](../reference/figures/Fig3.png)
 
   
 
-**Figure 2: Schematic representation of the aggregated inputs
+**Figure 3: Schematic representation of the aggregated inputs
 information.**
 
   
@@ -84,15 +99,15 @@ asymmetric in $i$ and $j$, as are the flows themselves. It takes the
 form of a square matrix of probabilities. This probability is normalized
 across all possible pairs of origins and destinations, such that
 $\sum_{i,j = 1}^{n}p_{ij} = 1$. Therefore, a matrix of probabilities can
-be obtained by normalizing any OD matrix (Figure 3).
+be obtained by normalizing any OD matrix (Figure 4).
 
   
 
-![Probability matrix](../reference/figures/Proba.png)
+![Probability matrix](../reference/figures/Fig4.png)
 
   
 
-**Figure 3: Schematic representation of the matrix of probabilities.**
+**Figure 4: Schematic representation of the matrix of probabilities.**
 
   
 
@@ -108,15 +123,15 @@ laws of intervening opportunities hinge on the assumption that the
 number of opportunities $s_{ij}$ between locations plays a more
 important role than the distance (Lenormand *et al.*, 2016). This
 fundamental difference between the two schools of thought is illustrated
-in Figure 4.
+in Figure 5.
 
   
 
-![Gravity vs IO](../reference/figures/GravVsOpp.png)
+![Gravity vs IO](../reference/figures/Fig5.png)
 
   
 
-**Figure 4: Illustration of the fundamental difference between gravity
+**Figure 5: Illustration of the fundamental difference between gravity
 and intervening opportunity laws.**
 
   
@@ -133,18 +148,18 @@ $\widetilde{T} = \left( {\widetilde{T}}_{ij} \right)$ by drawing at
 random $N$ trips from the trip distribution law
 $\left( p_{ij} \right)_{1 \leq i,j \leq n}$ respecting different level
 of constraints according to the model. We considered four different
-types of models in this package. As can be observed in Figure 5, the
+types of models in this package. As can be observed in Figure 6, the
 four models respect different level of constraints from the total number
 of trips to the total number of out-going and in-coming trips by
 locations (i.e. the margins).
 
   
 
-![Constrained models](../reference/figures/Models.png)
+![Constrained models](../reference/figures/Fig6.png)
 
   
 
-**Figure 5: Schematic representation of the constrained distribution
+**Figure 6: Schematic representation of the constrained distribution
 models.**
 
   
@@ -573,11 +588,11 @@ str(res)
     ##  $ info         :'data.frame':   5 obs. of  2 variables:
     ##   ..$ Argument: chr [1:5] "Law" "Model" "#Replications" "#Parameters" ...
     ##   ..$ Value   : chr [1:5] "NGravExp" "DCM" "3" "1" ...
-    ##  $ replication_1: num [1:105, 1:105] 0 24 4 0 2 16 4 103 5 6 ...
+    ##  $ replication_1: num [1:105, 1:105] 0 24 4 0 2 16 5 102 5 6 ...
     ##   ..- attr(*, "dimnames")=List of 2
-    ##  $ replication_2: num [1:105, 1:105] 0 24 4 0 2 15 4 104 5 6 ...
+    ##  $ replication_2: num [1:105, 1:105] 0 24 4 1 2 16 5 101 5 7 ...
     ##   ..- attr(*, "dimnames")=List of 2
-    ##  $ replication_3: num [1:105, 1:105] 0 24 4 0 2 15 4 101 5 7 ...
+    ##  $ replication_3: num [1:105, 1:105] 0 23 5 1 3 16 4 101 5 6 ...
     ##   ..- attr(*, "dimnames")=List of 2
     ##  $ proba        : num [1:105, 1:105] 0.00 4.31e-05 2.16e-05 3.90e-06 1.81e-05 ...
     ##   ..- attr(*, "dimnames")=List of 2
@@ -629,20 +644,20 @@ str(res)
     ##   ..$ Argument: chr [1:6] "Law" "Model" "#Replications" "#Parameters" ...
     ##   ..$ Value   : chr [1:6] "NGravExp" "DCM" "3" "2" ...
     ##  $ parameter_1:List of 4
-    ##   ..$ replication_1: num [1:105, 1:105] 0 25 5 0 3 16 4 101 5 6 ...
+    ##   ..$ replication_1: num [1:105, 1:105] 0 23 5 0 2 16 4 101 7 7 ...
     ##   .. ..- attr(*, "dimnames")=List of 2
-    ##   ..$ replication_2: num [1:105, 1:105] 0 23 4 0 2 15 4 102 5 6 ...
+    ##   ..$ replication_2: num [1:105, 1:105] 0 24 4 0 2 16 5 101 6 6 ...
     ##   .. ..- attr(*, "dimnames")=List of 2
-    ##   ..$ replication_3: num [1:105, 1:105] 0 23 4 0 2 16 4 101 5 7 ...
+    ##   ..$ replication_3: num [1:105, 1:105] 0 24 4 0 3 15 4 101 5 7 ...
     ##   .. ..- attr(*, "dimnames")=List of 2
     ##   ..$ proba        : num [1:105, 1:105] 0.00 4.31e-05 2.16e-05 3.90e-06 1.81e-05 ...
     ##   .. ..- attr(*, "dimnames")=List of 2
     ##  $ parameter_2:List of 4
-    ##   ..$ replication_1: num [1:105, 1:105] 0 54 2 0 0 38 1 76 5 7 ...
+    ##   ..$ replication_1: num [1:105, 1:105] 0 55 2 0 0 39 1 76 7 7 ...
     ##   .. ..- attr(*, "dimnames")=List of 2
-    ##   ..$ replication_2: num [1:105, 1:105] 0 53 2 0 0 38 1 77 5 7 ...
+    ##   ..$ replication_2: num [1:105, 1:105] 0 53 2 0 0 39 1 77 5 8 ...
     ##   .. ..- attr(*, "dimnames")=List of 2
-    ##   ..$ replication_3: num [1:105, 1:105] 0 54 2 0 0 38 1 76 5 7 ...
+    ##   ..$ replication_3: num [1:105, 1:105] 0 55 2 0 0 42 1 76 5 8 ...
     ##   .. ..- attr(*, "dimnames")=List of 2
     ##   ..$ proba        : num [1:105, 1:105] 0.00 8.13e-05 8.17e-06 7.10e-07 3.16e-06 ...
     ##   .. ..- attr(*, "dimnames")=List of 2
@@ -688,16 +703,16 @@ res$replication_1[1:10,1:10]
 ```
 
     ##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
-    ##  [1,]    0   32    0    0    0  120    0    1    0     0
-    ##  [2,]  572    0    0    0    0   22    0    0    0     0
-    ##  [3,]    0    0    0    0    0    0  202    0    0     0
+    ##  [1,]    0   32    0    0    0  122    0    1    0     0
+    ##  [2,]  570    0    0    0    0   23    0    0    0     0
+    ##  [3,]    0    0    0    0    0    0  197    0    0     0
     ##  [4,]    0    0    0    0    0    0    0    0    0     0
-    ##  [5,]    0    0    0    1    0    0    0    3    0     0
+    ##  [5,]    0    0    0    1    0    0    0    5    0     0
     ##  [6,]   17    2    0    0    0    0    0    0    0     0
-    ##  [7,]    0    0  201    0    0    0    0    0    0     0
+    ##  [7,]    0    0  203    0    0    0    0    0    0     0
     ##  [8,]    4    1    1    1   10    5    1    0    0     1
-    ##  [9,]    0    0    0    0    0    0    0   39    0     0
-    ## [10,]    0    0    0    0    0    0    0   14    0     0
+    ##  [9,]    0    0    0    0    0    0    0   40    0     0
+    ## [10,]    0    0    0    0    0    0    0   13    0     0
 
 ``` r
 res <- run_law_model(law = "Rad", 
@@ -820,73 +835,73 @@ print(calib)
 ```
 
     ##       Parameter Parameter_value    Simulation       CPC     NRMSE         KL
-    ## 1   parameter_1            0.05 replication_1 0.8163736 10.510810 0.12946768
-    ## 2   parameter_1            0.05 replication_2 0.8163536 10.533320 0.12926741
-    ## 3   parameter_1            0.05 replication_3 0.8164285 10.515701 0.12929415
-    ## 4   parameter_2           0.055 replication_1 0.8316521  9.416366 0.11324887
-    ## 5   parameter_2           0.055 replication_2 0.8315423  9.421327 0.11336516
-    ## 6   parameter_2           0.055 replication_3 0.8314125  9.439988 0.11352774
-    ## 7   parameter_3            0.06 replication_1 0.8440755  8.639789 0.09822944
-    ## 8   parameter_3            0.06 replication_2 0.8439358  8.647095 0.09831404
-    ## 9   parameter_3            0.06 replication_3 0.8438709  8.654010 0.09827296
-    ## 10  parameter_4           0.065 replication_1 0.8521515  8.164752 0.08791899
-    ## 11  parameter_4           0.065 replication_2 0.8520866  8.174262 0.08792880
-    ## 12  parameter_4           0.065 replication_3 0.8521016  8.169109 0.08776021
-    ## 13  parameter_5            0.07 replication_1 0.8552811  7.958450 0.08038082
-    ## 14  parameter_5            0.07 replication_2 0.8553759  7.960350 0.08024516
-    ## 15  parameter_5            0.07 replication_3 0.8552511  7.959528 0.08023305
-    ## 16  parameter_6           0.075 replication_1 0.8556754  7.949649 0.07931447
-    ## 17  parameter_6           0.075 replication_2 0.8558102  7.951071 0.07912837
-    ## 18  parameter_6           0.075 replication_3 0.8556704  7.955383 0.07923058
-    ## 19  parameter_7            0.08 replication_1 0.8551912  8.101586 0.07418906
-    ## 20  parameter_7            0.08 replication_2 0.8549467  8.114207 0.07447148
-    ## 21  parameter_7            0.08 replication_3 0.8551363  8.098712 0.07433643
-    ## 22  parameter_8           0.085 replication_1 0.8530300  8.385462 0.07376542
-    ## 23  parameter_8           0.085 replication_2 0.8530300  8.383125 0.07383572
-    ## 24  parameter_8           0.085 replication_3 0.8530500  8.378224 0.07375533
-    ## 25  parameter_9            0.09 replication_1 0.8497806  8.709755 0.07530338
-    ## 26  parameter_9            0.09 replication_2 0.8498405  8.721145 0.07533685
-    ## 27  parameter_9            0.09 replication_3 0.8499204  8.692106 0.07518605
-    ## 28 parameter_10           0.095 replication_1 0.8462068  9.100197 0.08113849
-    ## 29 parameter_10           0.095 replication_2 0.8464115  9.083540 0.08112635
-    ## 30 parameter_10           0.095 replication_3 0.8463166  9.098087 0.08224212
-    ## 31 parameter_11             0.1 replication_1 0.8422936  9.493687 0.08342093
-    ## 32 parameter_11             0.1 replication_2 0.8424683  9.476836 0.08322741
-    ## 33 parameter_11             0.1 replication_3 0.8423535  9.482693 0.08381787
+    ## 1   parameter_1            0.05 replication_1 0.8155949 10.696388 0.12970009
+    ## 2   parameter_1            0.05 replication_2 0.8156698 10.682117 0.12982427
+    ## 3   parameter_1            0.05 replication_3 0.8155650 10.694070 0.12977476
+    ## 4   parameter_2           0.055 replication_1 0.8308435  9.539518 0.11346640
+    ## 5   parameter_2           0.055 replication_2 0.8308485  9.547770 0.11353038
+    ## 6   parameter_2           0.055 replication_3 0.8308036  9.545452 0.11348092
+    ## 7   parameter_3            0.06 replication_1 0.8432270  8.735498 0.09829327
+    ## 8   parameter_3            0.06 replication_2 0.8431721  8.735014 0.09863707
+    ## 9   parameter_3            0.06 replication_3 0.8432470  8.732296 0.09816850
+    ## 10  parameter_4           0.065 replication_1 0.8514078  8.225395 0.08810273
+    ## 11  parameter_4           0.065 replication_2 0.8512680  8.224838 0.08811197
+    ## 12  parameter_4           0.065 replication_3 0.8512331  8.229890 0.08801803
+    ## 13  parameter_5            0.07 replication_1 0.8550415  7.981346 0.08032471
+    ## 14  parameter_5            0.07 replication_2 0.8551663  7.978877 0.07998281
+    ## 15  parameter_5            0.07 replication_3 0.8550814  7.982293 0.08055090
+    ## 16  parameter_6           0.075 replication_1 0.8554957  7.955424 0.07953504
+    ## 17  parameter_6           0.075 replication_2 0.8554608  7.952684 0.07946228
+    ## 18  parameter_6           0.075 replication_3 0.8555506  7.947662 0.07936142
+    ## 19  parameter_7            0.08 replication_1 0.8547820  8.091959 0.07439990
+    ## 20  parameter_7            0.08 replication_2 0.8548968  8.087794 0.07455052
+    ## 21  parameter_7            0.08 replication_3 0.8548818  8.089472 0.07442695
+    ## 22  parameter_8           0.085 replication_1 0.8530699  8.341824 0.07428572
+    ## 23  parameter_8           0.085 replication_2 0.8530050  8.342319 0.07415846
+    ## 24  parameter_8           0.085 replication_3 0.8530050  8.338807 0.07474587
+    ## 25  parameter_9            0.09 replication_1 0.8498904  8.665711 0.07559455
+    ## 26  parameter_9            0.09 replication_2 0.8498505  8.666252 0.07553950
+    ## 27  parameter_9            0.09 replication_3 0.8499853  8.661594 0.07543667
+    ## 28 parameter_10           0.095 replication_1 0.8463815  9.031003 0.08217894
+    ## 29 parameter_10           0.095 replication_2 0.8464614  9.031825 0.08120239
+    ## 30 parameter_10           0.095 replication_3 0.8464165  9.029429 0.08114915
+    ## 31 parameter_11             0.1 replication_1 0.8424683  9.418408 0.08337877
+    ## 32 parameter_11             0.1 replication_2 0.8424484  9.426069 0.08406642
+    ## 33 parameter_11             0.1 replication_3 0.8424733  9.429619 0.08359393
     ##          CPL     CPC_d    KS_stat   KS_pval
-    ## 1  0.6592593 0.8952867 0.07410143 0.9998055
-    ## 2  0.6594221 0.8953416 0.07408147 0.9998053
-    ## 3  0.6594221 0.8954913 0.07391176 0.9998146
-    ## 4  0.6709979 0.9155515 0.05111132 1.0000000
-    ## 5  0.6713469 0.9154816 0.05115125 1.0000000
-    ## 6  0.6725572 0.9155166 0.05098654 1.0000000
-    ## 7  0.6729730 0.9318532 0.03124579 1.0000000
-    ## 8  0.6726094 0.9319531 0.03126575 1.0000000
-    ## 9  0.6727911 0.9317933 0.03124579 1.0000000
-    ## 10 0.6728656 0.9431986 0.03475969 1.0000000
-    ## 11 0.6722973 0.9431337 0.03478964 1.0000000
-    ## 12 0.6728656 0.9430788 0.03478465 1.0000000
-    ## 13 0.6738623 0.9494128 0.03840337 1.0000000
-    ## 14 0.6738623 0.9495226 0.03839838 1.0000000
-    ## 15 0.6752336 0.9494228 0.03853314 1.0000000
-    ## 16 0.6720867 0.9480152 0.04450778 1.0000000
-    ## 17 0.6720916 0.9481450 0.04459762 1.0000000
-    ## 18 0.6720916 0.9479753 0.04455270 1.0000000
-    ## 19 0.6635688 0.9408576 0.05050238 1.0000000
-    ## 20 0.6635716 0.9407877 0.05053732 1.0000000
-    ## 21 0.6641907 0.9409175 0.05046245 1.0000000
-    ## 22 0.6516067 0.9329863 0.05745532 1.0000000
-    ## 23 0.6511924 0.9328964 0.05747528 1.0000000
-    ## 24 0.6516067 0.9329913 0.05747528 1.0000000
-    ## 25 0.6406504 0.9257688 0.06335508 0.9999989
-    ## 26 0.6404421 0.9257638 0.06340000 0.9999988
-    ## 27 0.6402340 0.9259036 0.06335009 0.9999989
-    ## 28 0.6355202 0.9186811 0.06826656 0.9999913
-    ## 29 0.6353097 0.9186961 0.06829651 0.9999911
-    ## 30 0.6355202 0.9186961 0.06826157 0.9999913
-    ## 31 0.6242383 0.9120975 0.07373207 0.9999462
-    ## 32 0.6237724 0.9121424 0.07364722 0.9999475
-    ## 33 0.6242383 0.9120226 0.07380195 0.9999450
+    ## 1  0.6589453 0.8944132 0.07517457 0.9997262
+    ## 2  0.6587830 0.8943733 0.07520452 0.9997244
+    ## 3  0.6592866 0.8945030 0.07512965 0.9997293
+    ## 4  0.6709878 0.9146581 0.05171527 1.0000000
+    ## 5  0.6720291 0.9147180 0.05158051 1.0000000
+    ## 6  0.6711583 0.9146880 0.05169531 1.0000000
+    ## 7  0.6722462 0.9312443 0.03150534 1.0000000
+    ## 8  0.6725998 0.9312193 0.03167504 1.0000000
+    ## 9  0.6713438 0.9310396 0.03167005 1.0000000
+    ## 10 0.6724866 0.9427044 0.03471976 1.0000000
+    ## 11 0.6719145 0.9427643 0.03466985 1.0000000
+    ## 12 0.6715369 0.9425896 0.03466486 1.0000000
+    ## 13 0.6738623 0.9488438 0.03824365 1.0000000
+    ## 14 0.6736658 0.9487639 0.03818375 1.0000000
+    ## 15 0.6744321 0.9487439 0.03823366 1.0000000
+    ## 16 0.6726781 0.9482248 0.04448781 1.0000000
+    ## 17 0.6722841 0.9481999 0.04437800 1.0000000
+    ## 18 0.6720818 0.9481749 0.04439298 1.0000000
+    ## 19 0.6625425 0.9409275 0.05032768 1.0000000
+    ## 20 0.6629561 0.9410573 0.05033267 1.0000000
+    ## 21 0.6633663 0.9409724 0.05023784 1.0000000
+    ## 22 0.6528926 0.9330611 0.05737046 1.0000000
+    ## 23 0.6503497 0.9330961 0.05742537 1.0000000
+    ## 24 0.6514140 0.9330911 0.05733552 1.0000000
+    ## 25 0.6415340 0.9258137 0.06327023 0.9999988
+    ## 26 0.6404677 0.9257538 0.06326523 0.9999988
+    ## 27 0.6413008 0.9257788 0.06330017 0.9999988
+    ## 28 0.6350993 0.9188508 0.06822164 0.9999910
+    ## 29 0.6355202 0.9188358 0.06819668 0.9999911
+    ## 30 0.6357616 0.9187959 0.06821664 0.9999910
+    ## 31 0.6238160 0.9121424 0.07359232 0.9999466
+    ## 32 0.6247039 0.9122173 0.07351745 0.9999478
+    ## 33 0.6243243 0.9122423 0.07352244 0.9999478
 
 All the necessary information is stored in the object calib, most of the
 goodness-of-fit measures agree on a parameter value of 0.075 in that

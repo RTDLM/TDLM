@@ -6,12 +6,24 @@ This is a list of changes made in the development/GitHub version of the
 package  
 between TDLM 1.1.3 (CRAN release 2025-09-03) and the next CRAN release.
 
+- Updated `vignette`.
+
+- Added the `eps` argument to
+  [`run_law_model()`](https://rtdlm.github.io/TDLM/reference/run_law_model.md)
+  and
+  [`run_model()`](https://rtdlm.github.io/TDLM/reference/run_model.md)
+  allowing to choose the value used to replace zero values in the
+  marginals of the Doubly Constrained Model (in order to avoid numerical
+  issues during the IPF procedure). The value 0.01 was hard-coded in the
+  function before.
+
 - Corrected an issue with `DCM`
   ([`run_law_model()`](https://rtdlm.github.io/TDLM/reference/run_law_model.md)
   and
   [`run_model()`](https://rtdlm.github.io/TDLM/reference/run_model.md))
   and the way it handles zeroes in pij. It was particularly problematic
-  with `law = "Unif"`.
+  with `law = "Unif"` (
+  <https://github.com/RTDLM/TDLM/blob/master/java/TDLM.java#L505>).
 
 ## TDLM 1.1.3
 
