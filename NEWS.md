@@ -5,10 +5,16 @@ between TDLM 1.1.3 (CRAN release 2025-09-03) and the next CRAN release.
 
 * Updated `vignette`.
 
+* Modified the method for generating a matrix of integers from the output of the 
+IPF procedure in DCM. The PCM is now used instead of UM
+(https://github.com/RTDLM/TDLM/blob/master/java/TDLM.java#L495).
+
+
 * Added the `eps` argument to `run_law_model()` and `run_model()` allowing to
 choose the value used to replace zero values in the marginals of the Doubly 
 Constrained Model (in order to avoid numerical issues during the IPF procedure).
-The value 0.01 was hard-coded in the function before.
+The value 0.01 was hard-coded in the function before 
+(https://github.com/RTDLM/TDLM/blob/master/java/TDLM.java#L495).
 
 * Corrected an issue with `DCM` (`run_law_model()` and `run_model()`) and the 
 way it handles zeroes in pij. It was particularly problematic with 
