@@ -41,7 +41,7 @@ By default, if \code{great_circle = TRUE}, the coordinates will be reprojected i
 degrees longitude/latitude to compute great-circle
 distances between centroids using an internal function, and surface areas
 will be
-calculated using \code{\link[sf:geos_measures]{sf::st_area()}}. If \code{great_circle = FALSE}, the coordinates
+calculated using \code{\link[sf:st_area]{sf::st_area()}}. If \code{great_circle = FALSE}, the coordinates
 are assumed to be planar (e.g., in meters) and Euclidean distances will
 be used.
 }
