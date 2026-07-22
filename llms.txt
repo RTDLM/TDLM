@@ -32,14 +32,16 @@ session:
 From the CRAN
 
 ``` r
+
 install.packages("TDLM")
 ```
 
 or from GitHub
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("RTDLM/TDLM", build_vignettes = TRUE)
+
+# install.packages("pak")
+pak::pak("RTDLM/TDLM")
 ```
 
 ## 3 Tutorial

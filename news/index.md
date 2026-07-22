@@ -1,16 +1,24 @@
 # Changelog
 
-## TDLM 1.1.3.9000
+## TDLM 1.1.4.9000
 
 This is a list of changes made in the development/GitHub version of the
 package  
-between TDLM 1.1.3 (CRAN release 2025-09-03) and the next CRAN release.
+between TDLM 1.1.4 (CRAN release 2026-07-22) and the next CRAN release.
+
+- 
+
+## TDLM 1.1.4
+
+This is a list of changes made between TDLM 1.1.3 (CRAN release
+2025-09-03) and  
+TDLM 1.1.4 (CRAN release 2026-07-22).
 
 - Updated `vignette`.
 
 - Modified the method for generating a matrix of integers from the
   output of the IPF procedure in DCM. The PCM is now used instead of UM
-  (<https://github.com/RTDLM/TDLM/blob/master/java/TDLM.java#L495>).
+  (<https://github.com/RTDLM/TDLM/blob/master/java/TDLM.java#L571>).
 
 - Added the `eps` argument to
   [`run_law_model()`](https://rtdlm.github.io/TDLM/reference/run_law_model.md)
@@ -70,7 +78,7 @@ TDLM 1.1.2 (CRAN release 2025-05-06).
 ## TDLM 1.1.1
 
 This is a list of changes made between TDLM 1.1.0 (CRAN release
-2025-0107) and  
+2025-01-07) and  
 TDLM 1.1.1 (CRAN release 2025-03-06).
 
 - Added error messages related to the Java dependency.

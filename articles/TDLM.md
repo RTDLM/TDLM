@@ -26,12 +26,12 @@ preferred.
 ## Origin–Destination matrix
 
 The description of movements within a given area is represented by an
-Origin-Destination (OD) matrix. The area of interest is divided into $n$
-locations, and $T_{ij}$ represents the volume of flows between location
-$i$ and location $j$. This volume typically corresponds to the number of
-trips or a commuting flow (i.e., the number of individuals living in $i$
-and working in $j$). The OD matrix is square, contains only positive
-values, and may have a zero diagonal (Figure 1).
+Origin-Destination (OD) matrix. The area of interest is divided into
+$`n`$ locations, and $`T_{ij}`$ represents the volume of flows between
+location $`i`$ and location $`j`$. This volume typically corresponds to
+the number of trips or a commuting flow (i.e., the number of individuals
+living in $`i`$ and working in $`j`$). The OD matrix is square, contains
+only positive values, and may have a zero diagonal (Figure 1).
 
   
 
@@ -44,8 +44,8 @@ values, and may have a zero diagonal (Figure 1).
   
 
 The goal is to generate a simulated OD matrix,
-$\widetilde{T} = \left( {\widetilde{T}}_{ij} \right)$, using only
-aggregated data while satisfying a set of constraints (Figure 2).
+$`\tilde{T}=(\tilde{T}_{ij})`$, using only aggregated data while
+satisfying a set of constraints (Figure 2).
 
   
 
@@ -63,20 +63,20 @@ matrix.**
 Three categories of inputs are typically considered to simulate an OD
 matrix (Figure 3). The masses and distances are the primary ingredients
 used to generate a matrix of probabilities based on a given distribution
-law. Thus, the probability $p_{ij}$ of observing a trip from location
-$i$ to location $j$ depends on the masses, the demand at the origin
-($m_{i}$), and the offer at the destination ($m_{j}$). Typically,
+law. Thus, the probability $`p_{ij}`$ of observing a trip from location
+$`i`$ to location $`j`$ depends on the masses, the demand at the origin
+($`m_i`$), and the offer at the destination ($`m_j`$). Typically,
 population is used as a surrogate for demand and offer. The probability
 of movement also depends on the costs, which are based on the distance
-$d_{ij}$ between locations or the number of opportunities $s_{ij}$
+$`d_{ij}`$ between locations or the number of opportunities $`s_{ij}`$
 between locations, depending on the chosen law (more details are
 provided in the next “Trip distribution laws” section). In general, the
 effect of the cost can be adjusted with a parameter.
 
 The margins are used to generate an OD matrix from the matrix of
-probabilities while preserving the total number of trips ($N$), the
-number of outgoing trips ($O_{i}$), and/or the number of incoming trips
-($D_{j}$) (more details are provided in the “Constrained distribution
+probabilities while preserving the total number of trips ($`N`$), the
+number of outgoing trips ($`O_i`$), and/or the number of incoming trips
+($`D_j`$) (more details are provided in the “Constrained distribution
 models” section).
 
   
@@ -93,12 +93,12 @@ information.**
 ## Trip distribution laws
 
 The purpose of a trip distribution law is to estimate the probability
-$p_{ij}$ that, out of all the possible travels in the system, there is
-one between location $i$ and location $j$. This probability is
-asymmetric in $i$ and $j$, as are the flows themselves. It takes the
+$`p_{ij}`$ that, out of all the possible travels in the system, there is
+one between location $`i`$ and location $`j`$. This probability is
+asymmetric in $`i`$ and $`j`$, as are the flows themselves. It takes the
 form of a square matrix of probabilities. This probability is normalized
 across all possible pairs of origins and destinations, such that
-$\sum_{i,j = 1}^{n}p_{ij} = 1$. Therefore, a matrix of probabilities can
+$`\sum_{i,j=1}^n p_{ij} = 1`$. Therefore, a matrix of probabilities can
 be obtained by normalizing any OD matrix (Figure 4).
 
   
@@ -112,15 +112,15 @@ be obtained by normalizing any OD matrix (Figure 4).
   
 
 As mentioned in the previous section, most trip distribution laws depend
-on the demand at the origin ($m_{i}$), the offer at the destination
-($m_{j}$), and a cost to move from $i$ to $j$. There are two major
+on the demand at the origin ($`m_i`$), the offer at the destination
+($`m_j`$), and a cost to move from $`i`$ to $`j`$. There are two major
 approaches for estimating the probability matrix. The traditional
 gravity approach, in analogy with Newton’s law of gravitation, is based
 on the assumption that the amount of trips between two locations is
 related to their populations and decays according to a function of the
-distance $d_{ij}$ between locations. In contrast to the gravity law, the
-laws of intervening opportunities hinge on the assumption that the
-number of opportunities $s_{ij}$ between locations plays a more
+distance $`d_{ij}`$ between locations. In contrast to the gravity law,
+the laws of intervening opportunities hinge on the assumption that the
+number of opportunities $`s_{ij}`$ between locations plays a more
 important role than the distance (Lenormand *et al.*, 2016). This
 fundamental difference between the two schools of thought is illustrated
 in Figure 5.
@@ -144,14 +144,13 @@ simulated matrix with observed data.
 ## Constrained distribution models
 
 The purpose of the trip distribution models is to generate an OD matrix
-$\widetilde{T} = \left( {\widetilde{T}}_{ij} \right)$ by drawing at
-random $N$ trips from the trip distribution law
-$\left( p_{ij} \right)_{1 \leq i,j \leq n}$ respecting different level
-of constraints according to the model. We considered four different
-types of models in this package. As can be observed in Figure 6, the
-four models respect different level of constraints from the total number
-of trips to the total number of out-going and in-coming trips by
-locations (i.e. the margins).
+$`\tilde{T}=(\tilde{T}_{ij})`$ by drawing at random $`N`$ trips from the
+trip distribution law $`(p_{ij})_{1 \leq i,j \leq n}`$ respecting
+different level of constraints according to the model. We considered
+four different types of models in this package. As can be observed in
+Figure 6, the four models respect different level of constraints from
+the total number of trips to the total number of out-going and in-coming
+trips by locations (i.e. the margins).
 
   
 
@@ -164,48 +163,58 @@ models.**
 
   
 
-More specifically, the volume of flows ${\widetilde{T}}_{ij}$ is
-generated from the matrix of probability with multinomial random draws
-that will take different forms according to the model used (Lenormand
-*et al.*, 2016). Therefore, since the process is stochastic, each
-simulated matrix is unique and composed of integers. Note that it is
-also possible to generate an average matrix from the multinomial trials.
+More specifically, the volume of flows $`\tilde{T}_{ij}`$ is generated
+from the matrix of probability with multinomial random draws that will
+take different forms according to the model used (Lenormand *et al.*,
+2016). Therefore, since the process is stochastic, each simulated matrix
+is unique and composed of integers. Note that it is also possible to
+generate an average matrix from the multinomial trials.
 
 ## Goodness-of-fit measures
 
 Finally, the trip distribution laws can be calibrated, and both the trip
 distribution laws and models can be evaluated by comparing a simulated
-matrix $\widetilde{T}$ with the observed matrix $T$. These comparisons
+matrix $`\tilde{T}`$ with the observed matrix $`T`$. These comparisons
 rely on various goodness-of-fit measures, which may or may not account
 for the distance between locations. These measures are described above.
 
 ### Common Part of Commuters (CPC)
 
-$$CPC\left( T,\widetilde{T} \right) = \frac{2 \cdot \sum\limits_{i,j = 1}^{n}min\left( T_{ij},{\widetilde{T}}_{ij} \right)}{N + \widetilde{N}}$$
+``` math
+\displaystyle CPC(T,\tilde{T}) = \frac{2\cdot\sum_{i,j=1}^n min(T_{ij},\tilde{T}_{ij})}{N + \tilde{N}}
+```
 
 (Gargiulo *et al.*, 2012; Lenormand *et al.*, 2012, 2016)
 
 ### Normalized Root Mean Square Error (NRMSE)
 
-$$NRMSE\left( T,\widetilde{T} \right) = \sqrt{\frac{\sum\limits_{i,j = 1}^{n}\left( T_{ij} - {\widetilde{T}}_{ij} \right)^{2}}{N}}$$
+``` math
+\displaystyle NRMSE(T,\tilde{T}) = \sqrt{\frac{\sum_{i,j=1}^n (T_{ij}-\tilde{T}_{ij})^2}{N}}
+```
 
 ### Kullback–Leibler divergence (KS)
 
-$$KL\left( T,\widetilde{T} \right) = \sum\limits_{i,j = 1}^{n}\frac{T_{ij}}{N}\log\left( \frac{T_{ij}}{N}\frac{\widetilde{N}}{{\widetilde{T}}_{ij}} \right)$$(Kullback
-& Leibler, 1951)
+``` math
+\displaystyle KL(T,\tilde{T}) = \sum_{i,j=1}^n \frac{T_{ij}}{N}\log\left(\frac{T_{ij}}{N}\frac{\tilde{N}}{\tilde{T}_{ij}}\right)
+```
+(Kullback & Leibler, 1951)
 
 ### Common Part of Links (CPL)
 
-$$CPL\left( T,\widetilde{T} \right) = \frac{2 \cdot \sum\limits_{i,j = 1}^{n}1_{T_{ij} > 0} \cdot 1_{{\widetilde{T}}_{ij} > 0}}{\sum\limits_{i,j = 1}^{n}1_{T_{ij} > 0} + \sum\limits_{i,j = 1}^{n}1_{{\widetilde{T}}_{ij} > 0}}$$(Lenormand
-*et al.*, 2016)
+``` math
+\displaystyle CPL(T,\tilde{T}) = \frac{2\cdot\sum_{i,j=1}^n 1_{T_{ij}>0} \cdot 1_{\tilde{T}_{ij}>0}}{\sum_{i,j=1}^n 1_{T_{ij}>0} + \sum_{i,j=1}^n 1_{\tilde{T}_{ij}>0}}
+```
+(Lenormand *et al.*, 2016)
 
 ### Common Part of Commuters based on the disance (CPC_d)
 
-Let us consider $N_{k}$ (and ${\widetilde{N}}_{k}$) the sum of observed
-(and simulated) flows at a distance comprised in the bin
-$\lbrack\text{bin\_size} \cdot k - \text{bin\_size},\text{bin\_size} \cdot k\lbrack$.
+Let us consider $`N_k`$ (and $`\tilde{N}_k`$) the sum of observed (and
+simulated) flows at a distance comprised in the bin
+$`[\mbox{bin_size} \cdot k-\mbox{bin_size}, \mbox{bin_size} \cdot k[`$.
 
-$$CPC_{d}\left( T,\widetilde{T} \right) = \frac{2 \cdot \sum\limits_{k = 1}^{\infty}min\left( N_{k},{\widetilde{N}}_{k} \right)}{N + \widetilde{N}}$$
+``` math
+\displaystyle CPC_d(T,\tilde{T}) = \frac{2\cdot\sum_{k=1}^{\infty} min(N_{k},\tilde{N}_{k})}{N+\tilde{N}}
+```
 
 (Lenormand *et al.*, 2016)
 
@@ -233,6 +242,7 @@ square matrix of integers. Each element of the matrix represents the
 number of commuters between a pair of US Kansas counties.
 
 ``` r
+
 data(od)
 
 od[1:5, 1:5]
@@ -246,6 +256,7 @@ od[1:5, 1:5]
     ## 20009     0     0     0    11     0
 
 ``` r
+
 dim(od)
 ```
 
@@ -255,6 +266,7 @@ The aggregated data are composed of the
 [distance](https://rtdlm.github.io/TDLM/reference/distance.html) matrix,
 
 ``` r
+
 data(distance)
 
 distance[1:5, 1:5]
@@ -268,6 +280,7 @@ distance[1:5, 1:5]
     ## 20009 308.89947 303.23478 319.5319 139.0661   0.0000
 
 ``` r
+
 dim(distance)
 ```
 
@@ -277,6 +290,7 @@ and the masses and margins contained in the data.frame
 [mass](https://rtdlm.github.io/TDLM/reference/mass.html).
 
 ``` r
+
 data(mass)
 
 mass[1:10,]
@@ -295,12 +309,14 @@ mass[1:10,]
     ## 20019       4359           486          180
 
 ``` r
+
 dim(mass)
 ```
 
     ## [1] 105   3
 
 ``` r
+
 mi <- as.numeric(mass[,1])
 names(mi) <- rownames(mass)
 
@@ -321,6 +337,7 @@ can be used to verify the validity of all inputs before running the main
 functions of the package.
 
 ``` r
+
 check_format_names(vectors = list(mi = mi, mj = mj, Oi = Oi, Dj = Dj),
                    matrices = list(od = od, distance = distance),
                    check = "format_and_names")
@@ -334,6 +351,7 @@ spatial object containing the geometry of the 105 US Kansas counties in
 2000.
 
 ``` r
+
 library(sf)
 
 data(county)
@@ -359,6 +377,7 @@ county[1:10,]
     ## 1079 20019 -96.24535 37.15007 1669.418 MULTIPOLYGON (((-96.52495 3...
 
 ``` r
+
 plot(county)
 ```
 
@@ -370,6 +389,7 @@ two dataframes providing longitude/latitude and X/Y coordinates for each
 location, respectively.
 
 ``` r
+
 coords[1:10,]
 ```
 
@@ -386,6 +406,7 @@ coords[1:10,]
     ## 20019 -96.24535 37.15007
 
 ``` r
+
 coords_xy[1:10,]
 ```
 
@@ -417,6 +438,7 @@ great-circle distances, using longitude/latitude coordinates and the
 Haversine formula
 
 ``` r
+
 haversine_d <- extract_distances(coords = coords,
                                  method = "Haversine")
 haversine_d[1:5, 1:5]
@@ -430,6 +452,7 @@ haversine_d[1:5, 1:5]
     ## [5,] 308.89947 303.23478 319.5319 139.0661   0.0000
 
 ``` r
+
 distance[1:5, 1:5]
 ```
 
@@ -443,6 +466,7 @@ distance[1:5, 1:5]
 or Euclidean distances based on X/Y coordinates
 
 ``` r
+
 xy_d <- extract_distances(coords = coords_xy,
                           method = "Euclidean")
 
@@ -461,6 +485,7 @@ box(lwd=1.5)
 ![](TDLM_files/figure-html/unnamed-chunk-8-1.png)
 
 ``` r
+
 par(mar = oldmar)
 ```
 
@@ -470,10 +495,11 @@ between the origin and the destination is based on the number of
 opportunities within a circle of radius equal to the distance between
 the origin and the destination, centered at the origin. The number of
 opportunities at the origin and the destination are not included. In our
-case, the number of inhabitants ($m_{i}$) is used as a proxy for the
+case, the number of inhabitants ($`m_i`$) is used as a proxy for the
 number of opportunities.
 
 ``` r
+
 sij <- extract_opportunities(opportunity = mi,
                              distance = distance,
                              check_names = TRUE)
@@ -495,6 +521,7 @@ optional `id`
 can also be provided to be used as names for the outputs.
 
 ``` r
+
 spi <- extract_spatial_information(county, id = "ID")
 
 sp_d <- spi$distance
@@ -510,6 +537,7 @@ sp_d[1:5, 1:5]
     ## 20009 0.0035056940 0.0034732710 0.003600990 0.001252210 0.000000000
 
 ``` r
+
 distance[1:5, 1:5]
 ```
 
@@ -526,6 +554,7 @@ distribution
 laws’ parameter value (see below).
 
 ``` r
+
 mean(spi$surface)
 ```
 
@@ -546,6 +575,7 @@ distance decay function (Lenormand *et al.*, 2016) and the Doubly
 Constrained Model.
 
 ``` r
+
 res <- run_law_model(law = "NGravExp", 
                      mass_origin = mi, 
                      mass_destination = mj, 
@@ -570,6 +600,7 @@ matrices composed of the three simulated matrices (`replication_1`,
 summarizing the simulation run.
 
 ``` r
+
 print(res)
 ```
 
@@ -581,22 +612,21 @@ print(res)
     ## 5     Parameter     0.01
 
 ``` r
+
 str(res)
 ```
 
-    ## List of 5
     ##  $ info         :'data.frame':   5 obs. of  2 variables:
     ##   ..$ Argument: chr [1:5] "Law" "Model" "#Replications" "#Parameters" ...
     ##   ..$ Value   : chr [1:5] "NGravExp" "DCM" "3" "1" ...
-    ##  $ replication_1: num [1:105, 1:105] 0 23 4 0 2 16 4 103 5 7 ...
+    ##  $ replication_1: num [1:105, 1:105] 0 24 4 0 2 15 5 102 5 6 ...
     ##   ..- attr(*, "dimnames")=List of 2
-    ##  $ replication_2: num [1:105, 1:105] 0 24 4 0 2 17 4 101 6 6 ...
+    ##  $ replication_2: num [1:105, 1:105] 0 23 4 0 2 16 4 101 5 6 ...
     ##   ..- attr(*, "dimnames")=List of 2
-    ##  $ replication_3: num [1:105, 1:105] 0 24 4 0 2 16 5 101 5 6 ...
+    ##  $ replication_3: num [1:105, 1:105] 0 24 4 0 2 15 4 101 6 7 ...
     ##   ..- attr(*, "dimnames")=List of 2
     ##  $ proba        : num [1:105, 1:105] 0.00 4.31e-05 2.16e-05 3.90e-06 1.81e-05 ...
     ##   ..- attr(*, "dimnames")=List of 2
-    ##  - attr(*, "class")= chr [1:2] "TDLM" "list"
     ##  - attr(*, "from")= chr "run_law_model"
     ##  - attr(*, "proba")= logi TRUE
 
@@ -604,6 +634,7 @@ This simulation run was based on one parameter value. It is possible to
 use a vector instead of a scalar for the `param` argument.
 
 ``` r
+
 res <- run_law_model(law = "NGravExp", 
                      mass_origin = mi, 
                      mass_destination = mj, 
@@ -624,6 +655,7 @@ In this case a list of list of matrices will be returned (one for each
 parameter value).
 
 ``` r
+
 print(res)
 ```
 
@@ -636,32 +668,31 @@ print(res)
     ## 6   Parameter 2     0.02
 
 ``` r
+
 str(res)
 ```
 
-    ## List of 3
     ##  $ info       :'data.frame': 6 obs. of  2 variables:
     ##   ..$ Argument: chr [1:6] "Law" "Model" "#Replications" "#Parameters" ...
     ##   ..$ Value   : chr [1:6] "NGravExp" "DCM" "3" "2" ...
     ##  $ parameter_1:List of 4
-    ##   ..$ replication_1: num [1:105, 1:105] 0 24 4 0 2 17 4 104 5 6 ...
+    ##   ..$ replication_1: num [1:105, 1:105] 0 24 4 0 2 15 4 101 5 6 ...
     ##   .. ..- attr(*, "dimnames")=List of 2
-    ##   ..$ replication_2: num [1:105, 1:105] 0 23 4 0 2 15 4 102 5 6 ...
+    ##   ..$ replication_2: num [1:105, 1:105] 0 23 4 0 2 17 4 101 5 6 ...
     ##   .. ..- attr(*, "dimnames")=List of 2
-    ##   ..$ replication_3: num [1:105, 1:105] 0 24 4 0 3 15 4 102 5 7 ...
+    ##   ..$ replication_3: num [1:105, 1:105] 0 23 4 0 2 15 4 102 5 6 ...
     ##   .. ..- attr(*, "dimnames")=List of 2
     ##   ..$ proba        : num [1:105, 1:105] 0.00 4.31e-05 2.16e-05 3.90e-06 1.81e-05 ...
     ##   .. ..- attr(*, "dimnames")=List of 2
     ##  $ parameter_2:List of 4
-    ##   ..$ replication_1: num [1:105, 1:105] 0 56 2 0 0 40 1 76 6 8 ...
+    ##   ..$ replication_1: num [1:105, 1:105] 0 55 2 0 0 38 1 77 5 7 ...
     ##   .. ..- attr(*, "dimnames")=List of 2
-    ##   ..$ replication_2: num [1:105, 1:105] 0 56 2 0 0 41 1 76 6 8 ...
+    ##   ..$ replication_2: num [1:105, 1:105] 0 53 2 0 0 39 1 76 5 7 ...
     ##   .. ..- attr(*, "dimnames")=List of 2
-    ##   ..$ replication_3: num [1:105, 1:105] 0 53 2 0 0 38 1 76 5 7 ...
+    ##   ..$ replication_3: num [1:105, 1:105] 0 56 2 0 0 43 1 76 5 7 ...
     ##   .. ..- attr(*, "dimnames")=List of 2
     ##   ..$ proba        : num [1:105, 1:105] 0.00 8.13e-05 8.17e-06 7.10e-07 3.16e-06 ...
     ##   .. ..- attr(*, "dimnames")=List of 2
-    ##  - attr(*, "class")= chr [1:2] "TDLM" "list"
     ##  - attr(*, "from")= chr "run_law_model"
     ##  - attr(*, "proba")= logi TRUE
 
@@ -669,6 +700,7 @@ It is also important to note that the radiation law and the uniform law
 are free of parameter.
 
 ``` r
+
 res <- run_law_model(law = "Rad", 
                      mass_origin = mi, 
                      mass_destination = mj, 
@@ -699,22 +731,24 @@ numbers and the output (`nbrep = 1` in this case) will be a matrix of
 positive real numbers.
 
 ``` r
+
 res$replication_1[1:10,1:10]
 ```
 
     ##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
-    ##  [1,]    0   34    0    0    0  121    0    1    0     0
-    ##  [2,]  568    0    0    0    0   22    0    0    0     0
-    ##  [3,]    0    0    0    0    0    0  197    0    0     0
+    ##  [1,]    0   32    0    0    0  121    0    1    0     0
+    ##  [2,]  571    0    0    0    0   22    0    0    0     0
+    ##  [3,]    0    0    0    0    0    0  198    0    0     0
     ##  [4,]    0    0    0    0    0    0    0    0    0     0
-    ##  [5,]    0    0    0    1    0    0    0    4    0     0
+    ##  [5,]    0    0    0    1    0    0    0    3    0     0
     ##  [6,]   17    2    0    0    0    0    0    0    0     0
-    ##  [7,]    0    0  201    0    0    0    0    0    0     0
+    ##  [7,]    0    0  200    0    0    0    0    0    0     0
     ##  [8,]    4    1    1    1   10    5    1    0    0     1
     ##  [9,]    0    0    0    0    0    0    0   40    0     0
     ## [10,]    0    0    0    0    0    0    0   13    0     0
 
 ``` r
+
 res <- run_law_model(law = "Rad", 
                      mass_origin = mi, 
                      mass_destination = mj, 
@@ -739,6 +773,7 @@ print(res)
     ## 3 #Replications 1 (average)
 
 ``` r
+
 res$replication_1[1:10,1:10]
 ```
 
@@ -803,6 +838,7 @@ exponential distance decay function (as described in (Lenormand *et
 al.*, 2016)) for commuting in US Kansas counties is around 0.085.
 
 ``` r
+
 print(calib_param(av_surf = mean(spi$surface), law = "NGravExp"))
 ```
 
@@ -814,6 +850,7 @@ trip distribution law and model we need to compute the goodness-of-fit
 measure for a wide range of parameter values.
 
 ``` r
+
 res <- run_law_model(law = "NGravExp", 
                      mass_origin = mi, 
                      mass_destination = mj, 
@@ -835,79 +872,80 @@ print(calib)
 ```
 
     ##       Parameter Parameter_value    Simulation       CPC     NRMSE         KL
-    ## 1   parameter_1            0.05 replication_1 0.8154801 10.689497 0.12990245
-    ## 2   parameter_1            0.05 replication_2 0.8155550 10.692846 0.12986344
-    ## 3   parameter_1            0.05 replication_3 0.8155949 10.685291 0.12986824
-    ## 4   parameter_2           0.055 replication_1 0.8308036  9.544867 0.11342789
-    ## 5   parameter_2           0.055 replication_2 0.8308185  9.547555 0.11409012
-    ## 6   parameter_2           0.055 replication_3 0.8308734  9.544355 0.11335729
-    ## 7   parameter_3            0.06 replication_1 0.8429774  8.740165 0.09864864
-    ## 8   parameter_3            0.06 replication_2 0.8431322  8.742387 0.09845464
-    ## 9   parameter_3            0.06 replication_3 0.8431621  8.741443 0.09848905
-    ## 10  parameter_4           0.065 replication_1 0.8512181  8.227974 0.08817444
-    ## 11  parameter_4           0.065 replication_2 0.8515176  8.221188 0.08791533
-    ## 12  parameter_4           0.065 replication_3 0.8514228  8.224828 0.08793684
-    ## 13  parameter_5            0.07 replication_1 0.8550016  7.982824 0.08048553
-    ## 14  parameter_5            0.07 replication_2 0.8548918  7.988418 0.08039937
-    ## 15  parameter_5            0.07 replication_3 0.8549417  7.989379 0.08043371
-    ## 16  parameter_6           0.075 replication_1 0.8555157  7.953337 0.07934876
-    ## 17  parameter_6           0.075 replication_2 0.8555456  7.951874 0.07965695
-    ## 18  parameter_6           0.075 replication_3 0.8554059  7.954619 0.07948630
-    ## 19  parameter_7            0.08 replication_1 0.8547969  8.092768 0.07461190
-    ## 20  parameter_7            0.08 replication_2 0.8548768  8.087080 0.07446867
-    ## 21  parameter_7            0.08 replication_3 0.8549567  8.082208 0.07439694
-    ## 22  parameter_8           0.085 replication_1 0.8530350  8.343684 0.07397719
-    ## 23  parameter_8           0.085 replication_2 0.8531698  8.338019 0.07384614
-    ## 24  parameter_8           0.085 replication_3 0.8530400  8.339684 0.07396713
-    ## 25  parameter_9            0.09 replication_1 0.8498904  8.665000 0.07580781
-    ## 26  parameter_9            0.09 replication_2 0.8499154  8.660138 0.07547901
-    ## 27  parameter_9            0.09 replication_3 0.8499903  8.662618 0.07539605
-    ## 28 parameter_10           0.095 replication_1 0.8465413  9.033457 0.08108052
-    ## 29 parameter_10           0.095 replication_2 0.8465462  9.024117 0.08105975
-    ## 30 parameter_10           0.095 replication_3 0.8464414  9.029595 0.08114967
-    ## 31 parameter_11             0.1 replication_1 0.8424983  9.424225 0.08366096
-    ## 32 parameter_11             0.1 replication_2 0.8424134  9.427404 0.08374970
-    ## 33 parameter_11             0.1 replication_3 0.8424384  9.423227 0.08385092
+    ## 1   parameter_1            0.05 replication_1 0.8156898 10.687655 0.12955254
+    ## 2   parameter_1            0.05 replication_2 0.8156898 10.687011 0.12970240
+    ## 3   parameter_1            0.05 replication_3 0.8157197 10.686403 0.12950405
+    ## 4   parameter_2           0.055 replication_1 0.8307087  9.546825 0.11370496
+    ## 5   parameter_2           0.055 replication_2 0.8306388  9.552020 0.11384959
+    ## 6   parameter_2           0.055 replication_3 0.8307886  9.545284 0.11345553
+    ## 7   parameter_3            0.06 replication_1 0.8432220  8.734519 0.09840737
+    ## 8   parameter_3            0.06 replication_2 0.8430922  8.739717 0.09847238
+    ## 9   parameter_3            0.06 replication_3 0.8430024  8.741269 0.09862547
+    ## 10  parameter_4           0.065 replication_1 0.8513629  8.226161 0.08810644
+    ## 11  parameter_4           0.065 replication_2 0.8512281  8.230905 0.08826587
+    ## 12  parameter_4           0.065 replication_3 0.8514378  8.226111 0.08840209
+    ## 13  parameter_5            0.07 replication_1 0.8550415  7.984824 0.08034947
+    ## 14  parameter_5            0.07 replication_2 0.8549417  7.981864 0.08043141
+    ## 15  parameter_5            0.07 replication_3 0.8551363  7.981786 0.08008814
+    ## 16  parameter_6           0.075 replication_1 0.8554807  7.953066 0.07963040
+    ## 17  parameter_6           0.075 replication_2 0.8554957  7.956429 0.07957195
+    ## 18  parameter_6           0.075 replication_3 0.8555007  7.955666 0.07938756
+    ## 19  parameter_7            0.08 replication_1 0.8548668  8.089095 0.07454767
+    ## 20  parameter_7            0.08 replication_2 0.8549367  8.087753 0.07463326
+    ## 21  parameter_7            0.08 replication_3 0.8548369  8.089479 0.07449021
+    ## 22  parameter_8           0.085 replication_1 0.8531248  8.338169 0.07419376
+    ## 23  parameter_8           0.085 replication_2 0.8530100  8.344521 0.07422834
+    ## 24  parameter_8           0.085 replication_3 0.8530400  8.339579 0.07386874
+    ## 25  parameter_9            0.09 replication_1 0.8500002  8.657632 0.07540860
+    ## 26  parameter_9            0.09 replication_2 0.8499404  8.660233 0.07549382
+    ## 27  parameter_9            0.09 replication_3 0.8499553  8.659967 0.07572993
+    ## 28 parameter_10           0.095 replication_1 0.8464364  9.028995 0.08115227
+    ## 29 parameter_10           0.095 replication_2 0.8464065  9.031270 0.08131174
+    ## 30 parameter_10           0.095 replication_3 0.8463666  9.034370 0.08149837
+    ## 31 parameter_11             0.1 replication_1 0.8424733  9.424439 0.08357158
+    ## 32 parameter_11             0.1 replication_2 0.8424583  9.426616 0.08364985
+    ## 33 parameter_11             0.1 replication_3 0.8424484  9.420902 0.08379929
     ##          CPL     CPC_d    KS_stat   KS_pval
-    ## 1  0.6589567 0.8945130 0.07507974 0.9997329
-    ## 2  0.6586207 0.8944481 0.07503981 0.9997355
-    ## 3  0.6596007 0.8941536 0.07527939 0.9997189
-    ## 4  0.6696058 0.9145533 0.05187999 1.0000000
-    ## 5  0.6713359 0.9145433 0.05188498 1.0000000
-    ## 6  0.6694301 0.9146830 0.05165039 1.0000000
-    ## 7  0.6724184 0.9310247 0.03173993 1.0000000
-    ## 8  0.6725998 0.9309897 0.03182978 1.0000000
-    ## 9  0.6709747 0.9312493 0.03165508 1.0000000
-    ## 10 0.6713483 0.9424548 0.03470479 1.0000000
-    ## 11 0.6734063 0.9427094 0.03463990 1.0000000
-    ## 12 0.6722925 0.9427144 0.03464489 1.0000000
-    ## 13 0.6734694 0.9488088 0.03818375 1.0000000
-    ## 14 0.6746425 0.9488388 0.03818874 1.0000000
-    ## 15 0.6744457 0.9487240 0.03825363 1.0000000
-    ## 16 0.6714845 0.9482148 0.04435804 1.0000000
-    ## 17 0.6730827 0.9481649 0.04438799 1.0000000
-    ## 18 0.6726835 0.9482298 0.04446785 1.0000000
-    ## 19 0.6633663 0.9409175 0.05029773 1.0000000
-    ## 20 0.6631612 0.9410273 0.05033267 1.0000000
-    ## 21 0.6625425 0.9409624 0.05025281 1.0000000
-    ## 22 0.6507937 0.9329863 0.05736547 1.0000000
-    ## 23 0.6505718 0.9330462 0.05740041 1.0000000
-    ## 24 0.6518141 0.9329863 0.05736547 1.0000000
-    ## 25 0.6413008 0.9257239 0.06335009 0.9999988
-    ## 26 0.6408840 0.9257738 0.06324527 0.9999989
-    ## 27 0.6408588 0.9259135 0.06317539 0.9999989
-    ## 28 0.6366645 0.9188857 0.06816673 0.9999912
-    ## 29 0.6353097 0.9188857 0.06822164 0.9999910
-    ## 30 0.6355820 0.9188907 0.06815675 0.9999912
-    ## 31 0.6247039 0.9121824 0.07350746 0.9999480
-    ## 32 0.6236050 0.9121824 0.07357235 0.9999469
-    ## 33 0.6242814 0.9121424 0.07356237 0.9999471
+    ## 1  0.6586088 0.8945180 0.07502483 0.9997368
+    ## 2  0.6596007 0.8945080 0.07507475 0.9997332
+    ## 3  0.6589396 0.8944282 0.07507475 0.9997332
+    ## 4  0.6702955 0.9145483 0.05176519 1.0000000
+    ## 5  0.6701245 0.9145632 0.05175520 1.0000000
+    ## 6  0.6721949 0.9147379 0.05156553 1.0000000
+    ## 7  0.6744060 0.9311295 0.03161016 1.0000000
+    ## 8  0.6720604 0.9312193 0.03169501 1.0000000
+    ## 9  0.6715171 0.9312293 0.03161016 1.0000000
+    ## 10 0.6707830 0.9426645 0.03464489 1.0000000
+    ## 11 0.6724817 0.9426295 0.03473973 1.0000000
+    ## 12 0.6726558 0.9426994 0.03465487 1.0000000
+    ## 13 0.6740525 0.9487839 0.03823366 1.0000000
+    ## 14 0.6738623 0.9487938 0.03823866 1.0000000
+    ## 15 0.6742557 0.9488388 0.03819373 1.0000000
+    ## 16 0.6736842 0.9482049 0.04437301 1.0000000
+    ## 17 0.6716732 0.9482348 0.04437800 1.0000000
+    ## 18 0.6714801 0.9482398 0.04446286 1.0000000
+    ## 19 0.6631612 0.9410024 0.05024782 1.0000000
+    ## 20 0.6635745 0.9408975 0.05035264 1.0000000
+    ## 21 0.6619239 0.9409325 0.05039756 1.0000000
+    ## 22 0.6520774 0.9330661 0.05731556 1.0000000
+    ## 23 0.6522706 0.9330012 0.05729559 1.0000000
+    ## 24 0.6507634 0.9330362 0.05732055 1.0000000
+    ## 25 0.6402597 0.9258187 0.06325525 0.9999989
+    ## 26 0.6406504 0.9257688 0.06324028 0.9999989
+    ## 27 0.6421839 0.9258836 0.06318038 0.9999989
+    ## 28 0.6353408 0.9187909 0.06820666 0.9999911
+    ## 29 0.6348891 0.9189057 0.06819169 0.9999911
+    ## 30 0.6353719 0.9189606 0.06812680 0.9999913
+    ## 31 0.6242383 0.9121374 0.07363724 0.9999459
+    ## 32 0.6236050 0.9122123 0.07352244 0.9999478
+    ## 33 0.6254226 0.9122473 0.07346753 0.9999486
 
 All the necessary information is stored in the object calib, most of the
 goodness-of-fit measures agree on a parameter value of 0.075 in that
 case with an associated average Common Part of Commuter equal to 85.6%.
 
 ``` r
+
 cpc <- aggregate(calib$CPC, list(calib$Parameter_value), mean)[,2]
 
 oldmar <- par()$mar
@@ -924,6 +962,7 @@ box(lwd=1.5)
 ![](TDLM_files/figure-html/unnamed-chunk-20-1.png)
 
 ``` r
+
 par(mar = oldmar)
 ```
 

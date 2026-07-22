@@ -12,8 +12,8 @@
 <link rel="icon" sizes="any" href="../favicon.ico">
 <link rel="manifest" href="../site.webmanifest">
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Tutorial for TDLM">
 </head>
@@ -25,7 +25,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">TDLM</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.3</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.4</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -72,7 +72,7 @@
                         <h4 data-toc-skip class="author">Maxime
 Lenormand</h4>
             
-            <h4 data-toc-skip class="date">2026-03-19</h4>
+            <h4 data-toc-skip class="date">2026-07-22</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/RTDLM/TDLM/blob/master/vignettes/TDLM.Rmd" class="external-link"><code>vignettes/TDLM.Rmd</code></a></small>
       <div class="d-none name"><code>TDLM.Rmd</code></div>
@@ -134,7 +134,7 @@ matrix.</b>
 </center>
 <p><br></p>
 <p>The goal is to generate a simulated OD matrix,
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>T</mi><mo accent="true">̃</mo></mover><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mover><mi>T</mi><mo accent="true">̃</mo></mover><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\tilde{T}=(\tilde{T}_{ij})</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>T</mi><mo accent="true">̃</mo></mover><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msub><mover><mi>T</mi><mo accent="true">̃</mo></mover><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\tilde{T}=(\tilde{T}_{ij})</annotation></semantics></math>,
 using only aggregated data while satisfying a set of constraints (Figure
 2).</p>
 <br><center>
@@ -257,11 +257,11 @@ simulated matrix with observed data.</p>
 </h2>
 <p>The purpose of the trip distribution models is to generate an OD
 matrix
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>T</mi><mo accent="true">̃</mo></mover><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mover><mi>T</mi><mo accent="true">̃</mo></mover><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\tilde{T}=(\tilde{T}_{ij})</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>T</mi><mo accent="true">̃</mo></mover><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msub><mover><mi>T</mi><mo accent="true">̃</mo></mover><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\tilde{T}=(\tilde{T}_{ij})</annotation></semantics></math>
 by drawing at random
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
 trips from the trip distribution law
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>p</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>1</mn><mo>≤</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo>≤</mo><mi>n</mi></mrow></msub><annotation encoding="application/x-tex">(p_{ij})_{1 \leq i,j \leq n}</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>p</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><msub><mo stretchy="false" form="postfix">)</mo><mrow><mn>1</mn><mo>≤</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo>≤</mo><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">(p_{ij})_{1 \leq i,j \leq n}</annotation></semantics></math>
 respecting different level of constraints according to the model. We
 considered four different types of models in this package. As can be
 observed in Figure 6, the four models respect different level of
@@ -298,24 +298,24 @@ described above.</p>
 <div class="section level3">
 <h3 id="common-part-of-commuters-cpc">Common Part of Commuters (CPC)<a class="anchor" aria-label="anchor" href="#common-part-of-commuters-cpc"></a>
 </h3>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>P</mi><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>T</mi><mo>,</mo><mover><mi>T</mi><mo accent="true">̃</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><mn>2</mn><mo>⋅</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>,</mo><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mi>m</mi><mi>i</mi><mi>n</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>T</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>,</mo><msub><mover><mi>T</mi><mo accent="true">̃</mo></mover><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>N</mi><mo>+</mo><mover><mi>N</mi><mo accent="true">̃</mo></mover></mrow></mfrac></mrow><annotation encoding="application/x-tex">\displaystyle CPC(T,\tilde{T}) = \frac{2\cdot\sum_{i,j=1}^n min(T_{ij},\tilde{T}_{ij})}{N + \tilde{N}}</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>P</mi><mi>C</mi><mo stretchy="false" form="prefix">(</mo><mi>T</mi><mo>,</mo><mover><mi>T</mi><mo accent="true">̃</mo></mover><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><mn>2</mn><mo>⋅</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>,</mo><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mi>m</mi><mi>i</mi><mi>n</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>T</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>,</mo><msub><mover><mi>T</mi><mo accent="true">̃</mo></mover><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>N</mi><mo>+</mo><mover><mi>N</mi><mo accent="true">̃</mo></mover></mrow></mfrac></mrow><annotation encoding="application/x-tex">\displaystyle CPC(T,\tilde{T}) = \frac{2\cdot\sum_{i,j=1}^n min(T_{ij},\tilde{T}_{ij})}{N + \tilde{N}}</annotation></semantics></math></p>
 <p><span class="citation">(Gargiulo <em>et al.</em>, 2012; Lenormand
 <em>et al.</em>, 2012, 2016)</span></p>
 </div>
 <div class="section level3">
 <h3 id="normalized-root-mean-square-error-nrmse">Normalized Root Mean Square Error (NRMSE)<a class="anchor" aria-label="anchor" href="#normalized-root-mean-square-error-nrmse"></a>
 </h3>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>R</mi><mi>M</mi><mi>S</mi><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>T</mi><mo>,</mo><mover><mi>T</mi><mo accent="true">̃</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msqrt><mfrac><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>,</mo><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>T</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>−</mo><msub><mover><mi>T</mi><mo accent="true">̃</mo></mover><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><mi>N</mi></mfrac></msqrt></mrow><annotation encoding="application/x-tex">\displaystyle NRMSE(T,\tilde{T}) = \sqrt{\frac{\sum_{i,j=1}^n (T_{ij}-\tilde{T}_{ij})^2}{N}}</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>R</mi><mi>M</mi><mi>S</mi><mi>E</mi><mo stretchy="false" form="prefix">(</mo><mi>T</mi><mo>,</mo><mover><mi>T</mi><mo accent="true">̃</mo></mover><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msqrt><mfrac><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>,</mo><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mo stretchy="false" form="prefix">(</mo><msub><mi>T</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>−</mo><msub><mover><mi>T</mi><mo accent="true">̃</mo></mover><mrow><mi>i</mi><mi>j</mi></mrow></msub><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><mi>N</mi></mfrac></msqrt></mrow><annotation encoding="application/x-tex">\displaystyle NRMSE(T,\tilde{T}) = \sqrt{\frac{\sum_{i,j=1}^n (T_{ij}-\tilde{T}_{ij})^2}{N}}</annotation></semantics></math></p>
 </div>
 <div class="section level3">
 <h3 id="kullbackleibler-divergence-ks">Kullback–Leibler divergence (KS)<a class="anchor" aria-label="anchor" href="#kullbackleibler-divergence-ks"></a>
 </h3>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>T</mi><mo>,</mo><mover><mi>T</mi><mo accent="true">̃</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>,</mo><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mfrac><msub><mi>T</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mi>N</mi></mfrac><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><msub><mi>T</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mi>N</mi></mfrac><mfrac><mover><mi>N</mi><mo accent="true">̃</mo></mover><msub><mover><mi>T</mi><mo accent="true">̃</mo></mover><mrow><mi>i</mi><mi>j</mi></mrow></msub></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle KL(T,\tilde{T}) = \sum_{i,j=1}^n \frac{T_{ij}}{N}\log\left(\frac{T_{ij}}{N}\frac{\tilde{N}}{\tilde{T}_{ij}}\right)</annotation></semantics></math><span class="citation">(Kullback &amp; Leibler, 1951)</span></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mi>T</mi><mo>,</mo><mover><mi>T</mi><mo accent="true">̃</mo></mover><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>,</mo><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mfrac><msub><mi>T</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mi>N</mi></mfrac><mrow><mi mathvariant="normal">log</mi><mo>⁡</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><msub><mi>T</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mi>N</mi></mfrac><mfrac><mover><mi>N</mi><mo accent="true">̃</mo></mover><msub><mover><mi>T</mi><mo accent="true">̃</mo></mover><mrow><mi>i</mi><mi>j</mi></mrow></msub></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\displaystyle KL(T,\tilde{T}) = \sum_{i,j=1}^n \frac{T_{ij}}{N}\log\left(\frac{T_{ij}}{N}\frac{\tilde{N}}{\tilde{T}_{ij}}\right)</annotation></semantics></math><span class="citation">(Kullback &amp; Leibler, 1951)</span></p>
 </div>
 <div class="section level3">
 <h3 id="common-part-of-links-cpl">Common Part of Links (CPL)<a class="anchor" aria-label="anchor" href="#common-part-of-links-cpl"></a>
 </h3>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>P</mi><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>T</mi><mo>,</mo><mover><mi>T</mi><mo accent="true">̃</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><mn>2</mn><mo>⋅</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>,</mo><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mn>1</mn><mrow><msub><mi>T</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>&gt;</mo><mn>0</mn></mrow></msub><mo>⋅</mo><msub><mn>1</mn><mrow><msub><mover><mi>T</mi><mo accent="true">̃</mo></mover><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>&gt;</mo><mn>0</mn></mrow></msub></mrow><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>,</mo><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mn>1</mn><mrow><msub><mi>T</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>&gt;</mo><mn>0</mn></mrow></msub><mo>+</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>,</mo><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mn>1</mn><mrow><msub><mover><mi>T</mi><mo accent="true">̃</mo></mover><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>&gt;</mo><mn>0</mn></mrow></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">\displaystyle CPL(T,\tilde{T}) = \frac{2\cdot\sum_{i,j=1}^n 1_{T_{ij}&gt;0} \cdot 1_{\tilde{T}_{ij}&gt;0}}{\sum_{i,j=1}^n 1_{T_{ij}&gt;0} + \sum_{i,j=1}^n 1_{\tilde{T}_{ij}&gt;0}}</annotation></semantics></math><span class="citation">(Lenormand <em>et al.</em>, 2016)</span></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>P</mi><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mi>T</mi><mo>,</mo><mover><mi>T</mi><mo accent="true">̃</mo></mover><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><mn>2</mn><mo>⋅</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>,</mo><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mn>1</mn><mrow><msub><mi>T</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>&gt;</mo><mn>0</mn></mrow></msub><mo>⋅</mo><msub><mn>1</mn><mrow><msub><mover><mi>T</mi><mo accent="true">̃</mo></mover><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>&gt;</mo><mn>0</mn></mrow></msub></mrow><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>,</mo><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mn>1</mn><mrow><msub><mi>T</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>&gt;</mo><mn>0</mn></mrow></msub><mo>+</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>,</mo><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mn>1</mn><mrow><msub><mover><mi>T</mi><mo accent="true">̃</mo></mover><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>&gt;</mo><mn>0</mn></mrow></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">\displaystyle CPL(T,\tilde{T}) = \frac{2\cdot\sum_{i,j=1}^n 1_{T_{ij}&gt;0} \cdot 1_{\tilde{T}_{ij}&gt;0}}{\sum_{i,j=1}^n 1_{T_{ij}&gt;0} + \sum_{i,j=1}^n 1_{\tilde{T}_{ij}&gt;0}}</annotation></semantics></math><span class="citation">(Lenormand <em>et al.</em>, 2016)</span></p>
 </div>
 <div class="section level3">
 <h3 id="common-part-of-commuters-based-on-the-disance-cpc_d">Common Part of Commuters based on the disance (CPC_d)<a class="anchor" aria-label="anchor" href="#common-part-of-commuters-based-on-the-disance-cpc_d"></a>
@@ -327,7 +327,7 @@ described above.</p>
 the sum of observed (and simulated) flows at a distance comprised in the
 bin
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mtext mathvariant="normal">bin_size</mtext><mo>⋅</mo><mi>k</mi><mo>−</mo><mtext mathvariant="normal">bin_size</mtext><mo>,</mo><mtext mathvariant="normal">bin_size</mtext><mo>⋅</mo><mi>k</mi><mo stretchy="false" form="prefix">[</mo></mrow><annotation encoding="application/x-tex">[\mbox{bin_size} \cdot k-\mbox{bin_size}, \mbox{bin_size} \cdot k[</annotation></semantics></math>.</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>P</mi><msub><mi>C</mi><mi>d</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>T</mi><mo>,</mo><mover><mi>T</mi><mo accent="true">̃</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><mn>2</mn><mo>⋅</mo><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mo accent="false">∞</mo></munderover><mi>m</mi><mi>i</mi><mi>n</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>N</mi><mi>k</mi></msub><mo>,</mo><msub><mover><mi>N</mi><mo accent="true">̃</mo></mover><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>N</mi><mo>+</mo><mover><mi>N</mi><mo accent="true">̃</mo></mover></mrow></mfrac></mrow><annotation encoding="application/x-tex">\displaystyle CPC_d(T,\tilde{T}) = \frac{2\cdot\sum_{k=1}^{\infty} min(N_{k},\tilde{N}_{k})}{N+\tilde{N}}</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>P</mi><msub><mi>C</mi><mi>d</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>T</mi><mo>,</mo><mover><mi>T</mi><mo accent="true">̃</mo></mover><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><mn>2</mn><mo>⋅</mo><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mo accent="false">∞</mo></munderover><mi>m</mi><mi>i</mi><mi>n</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>N</mi><mi>k</mi></msub><mo>,</mo><msub><mover><mi>N</mi><mo accent="true">̃</mo></mover><mi>k</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>N</mi><mo>+</mo><mover><mi>N</mi><mo accent="true">̃</mo></mover></mrow></mfrac></mrow><annotation encoding="application/x-tex">\displaystyle CPC_d(T,\tilde{T}) = \frac{2\cdot\sum_{k=1}^{\infty} min(N_{k},\tilde{N}_{k})}{N+\tilde{N}}</annotation></semantics></math></p>
 <p><span class="citation">(Lenormand <em>et al.</em>, 2016)</span></p>
 </div>
 <div class="section level3">
@@ -627,19 +627,17 @@ contain a table <code>info</code> summarizing the simulation run.</p>
 <span><span class="co">## 5     Parameter     0.01</span></span></code></pre>
 <div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## List of 5</span></span>
-<span><span class="co">##  $ info         :'data.frame':   5 obs. of  2 variables:</span></span>
+<pre><code><span><span class="co">##  $ info         :'data.frame':   5 obs. of  2 variables:</span></span>
 <span><span class="co">##   ..$ Argument: chr [1:5] "Law" "Model" "#Replications" "#Parameters" ...</span></span>
 <span><span class="co">##   ..$ Value   : chr [1:5] "NGravExp" "DCM" "3" "1" ...</span></span>
-<span><span class="co">##  $ replication_1: num [1:105, 1:105] 0 23 4 0 2 16 4 103 5 7 ...</span></span>
+<span><span class="co">##  $ replication_1: num [1:105, 1:105] 0 24 4 0 2 15 5 102 5 6 ...</span></span>
 <span><span class="co">##   ..- attr(*, "dimnames")=List of 2</span></span>
-<span><span class="co">##  $ replication_2: num [1:105, 1:105] 0 24 4 0 2 17 4 101 6 6 ...</span></span>
+<span><span class="co">##  $ replication_2: num [1:105, 1:105] 0 23 4 0 2 16 4 101 5 6 ...</span></span>
 <span><span class="co">##   ..- attr(*, "dimnames")=List of 2</span></span>
-<span><span class="co">##  $ replication_3: num [1:105, 1:105] 0 24 4 0 2 16 5 101 5 6 ...</span></span>
+<span><span class="co">##  $ replication_3: num [1:105, 1:105] 0 24 4 0 2 15 4 101 6 7 ...</span></span>
 <span><span class="co">##   ..- attr(*, "dimnames")=List of 2</span></span>
 <span><span class="co">##  $ proba        : num [1:105, 1:105] 0.00 4.31e-05 2.16e-05 3.90e-06 1.81e-05 ...</span></span>
 <span><span class="co">##   ..- attr(*, "dimnames")=List of 2</span></span>
-<span><span class="co">##  - attr(*, "class")= chr [1:2] "TDLM" "list"</span></span>
 <span><span class="co">##  - attr(*, "from")= chr "run_law_model"</span></span>
 <span><span class="co">##  - attr(*, "proba")= logi TRUE</span></span></code></pre>
 <p>This simulation run was based on one parameter value. It is possible
@@ -673,29 +671,27 @@ each parameter value).</p>
 <span><span class="co">## 6   Parameter 2     0.02</span></span></code></pre>
 <div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## List of 3</span></span>
-<span><span class="co">##  $ info       :'data.frame': 6 obs. of  2 variables:</span></span>
+<pre><code><span><span class="co">##  $ info       :'data.frame': 6 obs. of  2 variables:</span></span>
 <span><span class="co">##   ..$ Argument: chr [1:6] "Law" "Model" "#Replications" "#Parameters" ...</span></span>
 <span><span class="co">##   ..$ Value   : chr [1:6] "NGravExp" "DCM" "3" "2" ...</span></span>
 <span><span class="co">##  $ parameter_1:List of 4</span></span>
-<span><span class="co">##   ..$ replication_1: num [1:105, 1:105] 0 24 4 0 2 17 4 104 5 6 ...</span></span>
+<span><span class="co">##   ..$ replication_1: num [1:105, 1:105] 0 24 4 0 2 15 4 101 5 6 ...</span></span>
 <span><span class="co">##   .. ..- attr(*, "dimnames")=List of 2</span></span>
-<span><span class="co">##   ..$ replication_2: num [1:105, 1:105] 0 23 4 0 2 15 4 102 5 6 ...</span></span>
+<span><span class="co">##   ..$ replication_2: num [1:105, 1:105] 0 23 4 0 2 17 4 101 5 6 ...</span></span>
 <span><span class="co">##   .. ..- attr(*, "dimnames")=List of 2</span></span>
-<span><span class="co">##   ..$ replication_3: num [1:105, 1:105] 0 24 4 0 3 15 4 102 5 7 ...</span></span>
+<span><span class="co">##   ..$ replication_3: num [1:105, 1:105] 0 23 4 0 2 15 4 102 5 6 ...</span></span>
 <span><span class="co">##   .. ..- attr(*, "dimnames")=List of 2</span></span>
 <span><span class="co">##   ..$ proba        : num [1:105, 1:105] 0.00 4.31e-05 2.16e-05 3.90e-06 1.81e-05 ...</span></span>
 <span><span class="co">##   .. ..- attr(*, "dimnames")=List of 2</span></span>
 <span><span class="co">##  $ parameter_2:List of 4</span></span>
-<span><span class="co">##   ..$ replication_1: num [1:105, 1:105] 0 56 2 0 0 40 1 76 6 8 ...</span></span>
+<span><span class="co">##   ..$ replication_1: num [1:105, 1:105] 0 55 2 0 0 38 1 77 5 7 ...</span></span>
 <span><span class="co">##   .. ..- attr(*, "dimnames")=List of 2</span></span>
-<span><span class="co">##   ..$ replication_2: num [1:105, 1:105] 0 56 2 0 0 41 1 76 6 8 ...</span></span>
+<span><span class="co">##   ..$ replication_2: num [1:105, 1:105] 0 53 2 0 0 39 1 76 5 7 ...</span></span>
 <span><span class="co">##   .. ..- attr(*, "dimnames")=List of 2</span></span>
-<span><span class="co">##   ..$ replication_3: num [1:105, 1:105] 0 53 2 0 0 38 1 76 5 7 ...</span></span>
+<span><span class="co">##   ..$ replication_3: num [1:105, 1:105] 0 56 2 0 0 43 1 76 5 7 ...</span></span>
 <span><span class="co">##   .. ..- attr(*, "dimnames")=List of 2</span></span>
 <span><span class="co">##   ..$ proba        : num [1:105, 1:105] 0.00 8.13e-05 8.17e-06 7.10e-07 3.16e-06 ...</span></span>
 <span><span class="co">##   .. ..- attr(*, "dimnames")=List of 2</span></span>
-<span><span class="co">##  - attr(*, "class")= chr [1:2] "TDLM" "list"</span></span>
 <span><span class="co">##  - attr(*, "from")= chr "run_law_model"</span></span>
 <span><span class="co">##  - attr(*, "proba")= logi TRUE</span></span></code></pre>
 <p>It is also important to note that the radiation law and the uniform
@@ -729,13 +725,13 @@ case) will be a matrix of positive real numbers.</p>
 <div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">res</span><span class="op">$</span><span class="va">replication_1</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">]</span></span></code></pre></div>
 <pre><code><span><span class="co">##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]</span></span>
-<span><span class="co">##  [1,]    0   34    0    0    0  121    0    1    0     0</span></span>
-<span><span class="co">##  [2,]  568    0    0    0    0   22    0    0    0     0</span></span>
-<span><span class="co">##  [3,]    0    0    0    0    0    0  197    0    0     0</span></span>
+<span><span class="co">##  [1,]    0   32    0    0    0  121    0    1    0     0</span></span>
+<span><span class="co">##  [2,]  571    0    0    0    0   22    0    0    0     0</span></span>
+<span><span class="co">##  [3,]    0    0    0    0    0    0  198    0    0     0</span></span>
 <span><span class="co">##  [4,]    0    0    0    0    0    0    0    0    0     0</span></span>
-<span><span class="co">##  [5,]    0    0    0    1    0    0    0    4    0     0</span></span>
+<span><span class="co">##  [5,]    0    0    0    1    0    0    0    3    0     0</span></span>
 <span><span class="co">##  [6,]   17    2    0    0    0    0    0    0    0     0</span></span>
-<span><span class="co">##  [7,]    0    0  201    0    0    0    0    0    0     0</span></span>
+<span><span class="co">##  [7,]    0    0  200    0    0    0    0    0    0     0</span></span>
 <span><span class="co">##  [8,]    4    1    1    1   10    5    1    0    0     1</span></span>
 <span><span class="co">##  [9,]    0    0    0    0    0    0    0   40    0     0</span></span>
 <span><span class="co">## [10,]    0    0    0    0    0    0    0   13    0     0</span></span></code></pre>
@@ -840,73 +836,73 @@ goodness-of-fit measure for a wide range of parameter values.</p>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">calib</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##       Parameter Parameter_value    Simulation       CPC     NRMSE         KL</span></span>
-<span><span class="co">## 1   parameter_1            0.05 replication_1 0.8154801 10.689497 0.12990245</span></span>
-<span><span class="co">## 2   parameter_1            0.05 replication_2 0.8155550 10.692846 0.12986344</span></span>
-<span><span class="co">## 3   parameter_1            0.05 replication_3 0.8155949 10.685291 0.12986824</span></span>
-<span><span class="co">## 4   parameter_2           0.055 replication_1 0.8308036  9.544867 0.11342789</span></span>
-<span><span class="co">## 5   parameter_2           0.055 replication_2 0.8308185  9.547555 0.11409012</span></span>
-<span><span class="co">## 6   parameter_2           0.055 replication_3 0.8308734  9.544355 0.11335729</span></span>
-<span><span class="co">## 7   parameter_3            0.06 replication_1 0.8429774  8.740165 0.09864864</span></span>
-<span><span class="co">## 8   parameter_3            0.06 replication_2 0.8431322  8.742387 0.09845464</span></span>
-<span><span class="co">## 9   parameter_3            0.06 replication_3 0.8431621  8.741443 0.09848905</span></span>
-<span><span class="co">## 10  parameter_4           0.065 replication_1 0.8512181  8.227974 0.08817444</span></span>
-<span><span class="co">## 11  parameter_4           0.065 replication_2 0.8515176  8.221188 0.08791533</span></span>
-<span><span class="co">## 12  parameter_4           0.065 replication_3 0.8514228  8.224828 0.08793684</span></span>
-<span><span class="co">## 13  parameter_5            0.07 replication_1 0.8550016  7.982824 0.08048553</span></span>
-<span><span class="co">## 14  parameter_5            0.07 replication_2 0.8548918  7.988418 0.08039937</span></span>
-<span><span class="co">## 15  parameter_5            0.07 replication_3 0.8549417  7.989379 0.08043371</span></span>
-<span><span class="co">## 16  parameter_6           0.075 replication_1 0.8555157  7.953337 0.07934876</span></span>
-<span><span class="co">## 17  parameter_6           0.075 replication_2 0.8555456  7.951874 0.07965695</span></span>
-<span><span class="co">## 18  parameter_6           0.075 replication_3 0.8554059  7.954619 0.07948630</span></span>
-<span><span class="co">## 19  parameter_7            0.08 replication_1 0.8547969  8.092768 0.07461190</span></span>
-<span><span class="co">## 20  parameter_7            0.08 replication_2 0.8548768  8.087080 0.07446867</span></span>
-<span><span class="co">## 21  parameter_7            0.08 replication_3 0.8549567  8.082208 0.07439694</span></span>
-<span><span class="co">## 22  parameter_8           0.085 replication_1 0.8530350  8.343684 0.07397719</span></span>
-<span><span class="co">## 23  parameter_8           0.085 replication_2 0.8531698  8.338019 0.07384614</span></span>
-<span><span class="co">## 24  parameter_8           0.085 replication_3 0.8530400  8.339684 0.07396713</span></span>
-<span><span class="co">## 25  parameter_9            0.09 replication_1 0.8498904  8.665000 0.07580781</span></span>
-<span><span class="co">## 26  parameter_9            0.09 replication_2 0.8499154  8.660138 0.07547901</span></span>
-<span><span class="co">## 27  parameter_9            0.09 replication_3 0.8499903  8.662618 0.07539605</span></span>
-<span><span class="co">## 28 parameter_10           0.095 replication_1 0.8465413  9.033457 0.08108052</span></span>
-<span><span class="co">## 29 parameter_10           0.095 replication_2 0.8465462  9.024117 0.08105975</span></span>
-<span><span class="co">## 30 parameter_10           0.095 replication_3 0.8464414  9.029595 0.08114967</span></span>
-<span><span class="co">## 31 parameter_11             0.1 replication_1 0.8424983  9.424225 0.08366096</span></span>
-<span><span class="co">## 32 parameter_11             0.1 replication_2 0.8424134  9.427404 0.08374970</span></span>
-<span><span class="co">## 33 parameter_11             0.1 replication_3 0.8424384  9.423227 0.08385092</span></span>
+<span><span class="co">## 1   parameter_1            0.05 replication_1 0.8156898 10.687655 0.12955254</span></span>
+<span><span class="co">## 2   parameter_1            0.05 replication_2 0.8156898 10.687011 0.12970240</span></span>
+<span><span class="co">## 3   parameter_1            0.05 replication_3 0.8157197 10.686403 0.12950405</span></span>
+<span><span class="co">## 4   parameter_2           0.055 replication_1 0.8307087  9.546825 0.11370496</span></span>
+<span><span class="co">## 5   parameter_2           0.055 replication_2 0.8306388  9.552020 0.11384959</span></span>
+<span><span class="co">## 6   parameter_2           0.055 replication_3 0.8307886  9.545284 0.11345553</span></span>
+<span><span class="co">## 7   parameter_3            0.06 replication_1 0.8432220  8.734519 0.09840737</span></span>
+<span><span class="co">## 8   parameter_3            0.06 replication_2 0.8430922  8.739717 0.09847238</span></span>
+<span><span class="co">## 9   parameter_3            0.06 replication_3 0.8430024  8.741269 0.09862547</span></span>
+<span><span class="co">## 10  parameter_4           0.065 replication_1 0.8513629  8.226161 0.08810644</span></span>
+<span><span class="co">## 11  parameter_4           0.065 replication_2 0.8512281  8.230905 0.08826587</span></span>
+<span><span class="co">## 12  parameter_4           0.065 replication_3 0.8514378  8.226111 0.08840209</span></span>
+<span><span class="co">## 13  parameter_5            0.07 replication_1 0.8550415  7.984824 0.08034947</span></span>
+<span><span class="co">## 14  parameter_5            0.07 replication_2 0.8549417  7.981864 0.08043141</span></span>
+<span><span class="co">## 15  parameter_5            0.07 replication_3 0.8551363  7.981786 0.08008814</span></span>
+<span><span class="co">## 16  parameter_6           0.075 replication_1 0.8554807  7.953066 0.07963040</span></span>
+<span><span class="co">## 17  parameter_6           0.075 replication_2 0.8554957  7.956429 0.07957195</span></span>
+<span><span class="co">## 18  parameter_6           0.075 replication_3 0.8555007  7.955666 0.07938756</span></span>
+<span><span class="co">## 19  parameter_7            0.08 replication_1 0.8548668  8.089095 0.07454767</span></span>
+<span><span class="co">## 20  parameter_7            0.08 replication_2 0.8549367  8.087753 0.07463326</span></span>
+<span><span class="co">## 21  parameter_7            0.08 replication_3 0.8548369  8.089479 0.07449021</span></span>
+<span><span class="co">## 22  parameter_8           0.085 replication_1 0.8531248  8.338169 0.07419376</span></span>
+<span><span class="co">## 23  parameter_8           0.085 replication_2 0.8530100  8.344521 0.07422834</span></span>
+<span><span class="co">## 24  parameter_8           0.085 replication_3 0.8530400  8.339579 0.07386874</span></span>
+<span><span class="co">## 25  parameter_9            0.09 replication_1 0.8500002  8.657632 0.07540860</span></span>
+<span><span class="co">## 26  parameter_9            0.09 replication_2 0.8499404  8.660233 0.07549382</span></span>
+<span><span class="co">## 27  parameter_9            0.09 replication_3 0.8499553  8.659967 0.07572993</span></span>
+<span><span class="co">## 28 parameter_10           0.095 replication_1 0.8464364  9.028995 0.08115227</span></span>
+<span><span class="co">## 29 parameter_10           0.095 replication_2 0.8464065  9.031270 0.08131174</span></span>
+<span><span class="co">## 30 parameter_10           0.095 replication_3 0.8463666  9.034370 0.08149837</span></span>
+<span><span class="co">## 31 parameter_11             0.1 replication_1 0.8424733  9.424439 0.08357158</span></span>
+<span><span class="co">## 32 parameter_11             0.1 replication_2 0.8424583  9.426616 0.08364985</span></span>
+<span><span class="co">## 33 parameter_11             0.1 replication_3 0.8424484  9.420902 0.08379929</span></span>
 <span><span class="co">##          CPL     CPC_d    KS_stat   KS_pval</span></span>
-<span><span class="co">## 1  0.6589567 0.8945130 0.07507974 0.9997329</span></span>
-<span><span class="co">## 2  0.6586207 0.8944481 0.07503981 0.9997355</span></span>
-<span><span class="co">## 3  0.6596007 0.8941536 0.07527939 0.9997189</span></span>
-<span><span class="co">## 4  0.6696058 0.9145533 0.05187999 1.0000000</span></span>
-<span><span class="co">## 5  0.6713359 0.9145433 0.05188498 1.0000000</span></span>
-<span><span class="co">## 6  0.6694301 0.9146830 0.05165039 1.0000000</span></span>
-<span><span class="co">## 7  0.6724184 0.9310247 0.03173993 1.0000000</span></span>
-<span><span class="co">## 8  0.6725998 0.9309897 0.03182978 1.0000000</span></span>
-<span><span class="co">## 9  0.6709747 0.9312493 0.03165508 1.0000000</span></span>
-<span><span class="co">## 10 0.6713483 0.9424548 0.03470479 1.0000000</span></span>
-<span><span class="co">## 11 0.6734063 0.9427094 0.03463990 1.0000000</span></span>
-<span><span class="co">## 12 0.6722925 0.9427144 0.03464489 1.0000000</span></span>
-<span><span class="co">## 13 0.6734694 0.9488088 0.03818375 1.0000000</span></span>
-<span><span class="co">## 14 0.6746425 0.9488388 0.03818874 1.0000000</span></span>
-<span><span class="co">## 15 0.6744457 0.9487240 0.03825363 1.0000000</span></span>
-<span><span class="co">## 16 0.6714845 0.9482148 0.04435804 1.0000000</span></span>
-<span><span class="co">## 17 0.6730827 0.9481649 0.04438799 1.0000000</span></span>
-<span><span class="co">## 18 0.6726835 0.9482298 0.04446785 1.0000000</span></span>
-<span><span class="co">## 19 0.6633663 0.9409175 0.05029773 1.0000000</span></span>
-<span><span class="co">## 20 0.6631612 0.9410273 0.05033267 1.0000000</span></span>
-<span><span class="co">## 21 0.6625425 0.9409624 0.05025281 1.0000000</span></span>
-<span><span class="co">## 22 0.6507937 0.9329863 0.05736547 1.0000000</span></span>
-<span><span class="co">## 23 0.6505718 0.9330462 0.05740041 1.0000000</span></span>
-<span><span class="co">## 24 0.6518141 0.9329863 0.05736547 1.0000000</span></span>
-<span><span class="co">## 25 0.6413008 0.9257239 0.06335009 0.9999988</span></span>
-<span><span class="co">## 26 0.6408840 0.9257738 0.06324527 0.9999989</span></span>
-<span><span class="co">## 27 0.6408588 0.9259135 0.06317539 0.9999989</span></span>
-<span><span class="co">## 28 0.6366645 0.9188857 0.06816673 0.9999912</span></span>
-<span><span class="co">## 29 0.6353097 0.9188857 0.06822164 0.9999910</span></span>
-<span><span class="co">## 30 0.6355820 0.9188907 0.06815675 0.9999912</span></span>
-<span><span class="co">## 31 0.6247039 0.9121824 0.07350746 0.9999480</span></span>
-<span><span class="co">## 32 0.6236050 0.9121824 0.07357235 0.9999469</span></span>
-<span><span class="co">## 33 0.6242814 0.9121424 0.07356237 0.9999471</span></span></code></pre>
+<span><span class="co">## 1  0.6586088 0.8945180 0.07502483 0.9997368</span></span>
+<span><span class="co">## 2  0.6596007 0.8945080 0.07507475 0.9997332</span></span>
+<span><span class="co">## 3  0.6589396 0.8944282 0.07507475 0.9997332</span></span>
+<span><span class="co">## 4  0.6702955 0.9145483 0.05176519 1.0000000</span></span>
+<span><span class="co">## 5  0.6701245 0.9145632 0.05175520 1.0000000</span></span>
+<span><span class="co">## 6  0.6721949 0.9147379 0.05156553 1.0000000</span></span>
+<span><span class="co">## 7  0.6744060 0.9311295 0.03161016 1.0000000</span></span>
+<span><span class="co">## 8  0.6720604 0.9312193 0.03169501 1.0000000</span></span>
+<span><span class="co">## 9  0.6715171 0.9312293 0.03161016 1.0000000</span></span>
+<span><span class="co">## 10 0.6707830 0.9426645 0.03464489 1.0000000</span></span>
+<span><span class="co">## 11 0.6724817 0.9426295 0.03473973 1.0000000</span></span>
+<span><span class="co">## 12 0.6726558 0.9426994 0.03465487 1.0000000</span></span>
+<span><span class="co">## 13 0.6740525 0.9487839 0.03823366 1.0000000</span></span>
+<span><span class="co">## 14 0.6738623 0.9487938 0.03823866 1.0000000</span></span>
+<span><span class="co">## 15 0.6742557 0.9488388 0.03819373 1.0000000</span></span>
+<span><span class="co">## 16 0.6736842 0.9482049 0.04437301 1.0000000</span></span>
+<span><span class="co">## 17 0.6716732 0.9482348 0.04437800 1.0000000</span></span>
+<span><span class="co">## 18 0.6714801 0.9482398 0.04446286 1.0000000</span></span>
+<span><span class="co">## 19 0.6631612 0.9410024 0.05024782 1.0000000</span></span>
+<span><span class="co">## 20 0.6635745 0.9408975 0.05035264 1.0000000</span></span>
+<span><span class="co">## 21 0.6619239 0.9409325 0.05039756 1.0000000</span></span>
+<span><span class="co">## 22 0.6520774 0.9330661 0.05731556 1.0000000</span></span>
+<span><span class="co">## 23 0.6522706 0.9330012 0.05729559 1.0000000</span></span>
+<span><span class="co">## 24 0.6507634 0.9330362 0.05732055 1.0000000</span></span>
+<span><span class="co">## 25 0.6402597 0.9258187 0.06325525 0.9999989</span></span>
+<span><span class="co">## 26 0.6406504 0.9257688 0.06324028 0.9999989</span></span>
+<span><span class="co">## 27 0.6421839 0.9258836 0.06318038 0.9999989</span></span>
+<span><span class="co">## 28 0.6353408 0.9187909 0.06820666 0.9999911</span></span>
+<span><span class="co">## 29 0.6348891 0.9189057 0.06819169 0.9999911</span></span>
+<span><span class="co">## 30 0.6353719 0.9189606 0.06812680 0.9999913</span></span>
+<span><span class="co">## 31 0.6242383 0.9121374 0.07363724 0.9999459</span></span>
+<span><span class="co">## 32 0.6236050 0.9122123 0.07352244 0.9999478</span></span>
+<span><span class="co">## 33 0.6254226 0.9122473 0.07346753 0.9999486</span></span></code></pre>
 <p>All the necessary information is stored in the object calib, most of
 the goodness-of-fit measures agree on a parameter value of 0.075 in that
 case with an associated average Common Part of Commuter equal to
@@ -971,7 +967,7 @@ Association</em> 46, 68–78.
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer>
