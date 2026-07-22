@@ -8,7 +8,7 @@
 ## Citation
 
 Source:
-[`inst/CITATION`](https://github.com/RTDLM/TDLM/blob/v1.1.4/inst/CITATION)
+[`inst/CITATION`](https://github.com/RTDLM/TDLM/blob/master/inst/CITATION)
 
 Lenormand M (2023). TDLM: Systematic Comparison of Trip Distribution
 Laws and Models. Journal of Open Source Software 8, 5434.
