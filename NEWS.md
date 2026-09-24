@@ -3,7 +3,7 @@
 This is a list of changes made in the development/GitHub version of the package  
 between TDLM 1.1.4 (CRAN release 2026-07-22) and the next CRAN release.
 
-*
+* 
 
 # TDLM 1.1.4
 
